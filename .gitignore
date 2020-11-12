@@ -1,0 +1,7 @@
+# tous les dossiers bin et fichiers .class - on partage juste le code source avec nos collaborateurs
+# pas les fichiers compilés
+bin
+*.class
+
+# sauf le bin dans le gabarit, pour montrer la structure du projet
+!ProjetStandard/bin

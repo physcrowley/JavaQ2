@@ -1,0 +1,1 @@
+Les fichiers bytecode (`.class`) compilés à partir du dossier `src` seront ajoutés ici, respectant la structure des packages déclarés.
