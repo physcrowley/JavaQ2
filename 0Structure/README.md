@@ -22,7 +22,7 @@ Les blocs de code en Java sont entourés par des accolades `{}`. En Python, c'es
 ## Commentaires de ligne `//` et de bloc `/*  */`
 Les commentaires de ligne sont désignés par deux barres obliques `//`. Pour un commentaire qui fait plusieurs lignes, c'est possible d'utiliser un commentaire de bloc qui est entouré par les symboles `/* ... */`.
 
-Ces commentaires sont utilisés pour expliquer la logique du prochain algorithme ou de la prochaine déclaration dans le programme.
+>Ces commentaires sont utilisés pour expliquer la logique du prochain algorithme ou de la prochaine déclaration dans le programme.
 
 ## Documentation `/**  */`
 On peut créer un commentaire spécial en l'entourant avec les symboles suivants : `/** ... */`. Noter qu'il y a deux astérisques (*) après la première barre oblique. Ce commentaire spécial est de la documentation qui peut être ajoutée par le compilateur à une base de données qui s'appelle le `javadoc`.
