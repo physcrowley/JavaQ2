@@ -37,10 +37,12 @@ class Base
         // Indiquer à l'utilisateur d'entreer quelque chose
         System.out.println("Taper un nombre décimal ('.' est le symbole décimal)");
         String getNum = input.nextLine(); // .nextLine() est la méthode pour capter une ligne de texte à la console
-        double num = Double.parseDouble(getNum);
-
+        double num = Double.parseDouble(getNum); // convertir la valeur saisie en double
+    
         System.out.println("Tu as inscrit le nombre " + num);
+        
+        System.out.
 
-        input.close(); // fermer + détruire le Scanner sur la console (System.in)
+        input.close(); // fermer / détruire le Scanner sur la console (System.in)
     }
 }
