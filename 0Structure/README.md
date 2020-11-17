@@ -58,7 +58,7 @@ public class App
      */
     public static void main(String[] args)
     {
-        System.out.prinln("Hello world!"); // ; -> la seule instruction passée par le programme
+        System.out.println("Hello world!"); // ; -> la seule instruction passée par le programme
     }
 } // {} noter les accolades au début et à la fin de la classe et au début et à la fin de main
 
