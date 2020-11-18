@@ -119,17 +119,46 @@ Pour saisir des valeurs via l'entrée standard, il faut créer un objet de type 
 
 Pour utiliser des objets de type `Scanner` il y a trois étapes :
 1. Importer la définition;
-2. Déclarer un objet du type `Scanner`;
+2. Déclarer un objet de type `Scanner`;
 3. Utiliser des méthodes de `Scanner` dans le programme.
 
 
-D'abord, il faut importer le code qui définit le type `Scanner` avec la ligne de code suivante au début du fichier (avant la déclaration de la classe) :
+1️⃣ D'abord, il faut importer le code qui définit le type `Scanner` avec la ligne de code suivante au début du fichier (avant la déclaration de la classe) :
 
 ```java
 import java.util.Scanner;
 ```
 
-...
+2️⃣ Ensuite, généralement **à la première ligne de la méthode `main()`**, il faut créer un objet de type `Scanner` qui observe l'entrée standard. Par exemple :
 
+```java
+Scanner stdin = new Scanner(System.in);
+```
 
-À la **toute fin, à la dernière ligne de `main()`** il faut aussi fermer le `Scanner` avec la méthode `.close()`.
+Dans cet exemple on a nommé notre `Scanner` "stdin".
+
+>On doit créer UN SEUL OBJET SCANNER par programme. Ce `Scanner` unique prend *tous* le texte tapé à la console. Si on définit plus qu'un `Scanner`, c'est possible qu'ils interfèrent l'un avec l'autre. De plus, on peut penser que fermer un `Scanner` spécifique laisse les autres actifs, mais ce n'est pas le cas. Fermer n'importe quel `Scanner` ferme la communication avec la console `System.in` pour le reste du programme.
+
+3️⃣ Finalement, après avoir communiquer clairement *à l'utilisateur* notre intention via des messages à la console, on peut saisir sa réponse avec des méthodes de `Scanner`.
+
+Le plus versatile et le plus communément utilisée est la méthode `nextLine()` qui saisit tout le texte sur la ligne et place le curseur à la ligne suivante. par exemple,
+
+```java
+String line = stdin.nextLine();
+```
+
+>La méthode `nextLine()` retourne toujours un `String`, comme la fonction `input()` en Python. Il faut alors convertir ce texte explicitement en nombre si on veut l'utiliser comme valeur numérique (un indexe ou une quantité).
+>
+>Voir la section sur la conversion de texte plus haut pour des exemples.
+>
+>C'est l'approche recommandée. On peut faire *une meilleure gestion des erreurs* en séparant l'opération qui saisit l'entrée de l'opération qui convertit le texte en valeur numérique.
+
+## Fermer le `Scanner`
+
+À la **toute fin, à la dernière ligne de `main()`** il faut aussi fermer le `Scanner` avec la méthode `.close()`. Par exemple, 
+
+```java
+stdin.close();
+```
+
+C'est important de faire cette opération à la fin du programme car elle coupe définitivement la communication entre le programme et la console `System.in`. Cela affecte tous les `Scanner` qui pourraient être actifs, pas seulement le `Scanner` nommé lorsqu'on appelle `close()`. 
