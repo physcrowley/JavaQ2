@@ -139,7 +139,7 @@ Scanner stdin = new Scanner(System.in);
 
 Dans cet exemple on a nommé notre `Scanner` "stdin".
 
->On doit créer UN SEUL OBJET SCANNER par programme. Ce `Scanner` unique prend *tous* le texte tapé à la console. Si on définit plus qu'un `Scanner`, c'est possible qu'ils interfèrent l'un avec l'autre. De plus, on peut penser que fermer un `Scanner` spécifique laisse les autres actifs, mais ce n'est pas le cas. Fermer n'importe quel `Scanner` ferme la communication avec la console `System.in` pour le reste du programme incluant les autres `Scanner`.
+>On doit créer UN SEUL OBJET SCANNER par programme. Ce `Scanner` unique prend *tout* le texte tapé à la console. Si on définit plus qu'un `Scanner`, c'est possible qu'ils interfèrent l'un avec l'autre. De plus, on peut penser que fermer un `Scanner` spécifique laisse les autres actifs, mais ce n'est pas le cas. Fermer n'importe quel `Scanner` ferme la communication avec la console `System.in` pour le reste du programme incluant les autres `Scanner`.
 
 3️⃣ Finalement, après avoir communiquer clairement *à l'utilisateur* notre intention via des messages à la console, on peut saisir sa réponse avec des méthodes de `Scanner`.
 
