@@ -1,10 +1,18 @@
-// Ajouter la définition pour notre objet Scanner
+/*  Par: David Crowley, crowlda@ecolecatholique.ca 
+    2020-11-17
+*/
+
+// Au début du fichier, avant la déclaration de classe...
+// importer la définition de l'objet Scanner 
 import java.util.Scanner;
 
+/** Exemples sur les types et les entrées et sorties au console */
 class Base
 {
     public static void main(String[] args) 
     {
+        //----------TYPES DE DONNÉES----------//
+
         // Il faut déclarer le TYPE des variables
         // Format : <type> <nom> = <valeur assignée>;
 
@@ -12,37 +20,53 @@ class Base
         int n = 3; // nombres entiers -> pour compter
         double d = 3.1415; // nombres décimaux -> pour les calculs
 
-        // conversions de type
+        // conversions de type (texte -> nombre)
         n = Integer.parseInt(s);
         d = Double.parseDouble(s);
 
         // casting entre types numériques
+        n = (int) 0.691;
+        d = (double) 365;
 
-        n = (int) d;
-        d = n;
 
-        // SORTIE AU CONSOLE
-        // System.out est la console définit par ton système d'exploitation
+        //-----------SORTIE À LA CONSOLE-----------//
+        
+        // System.out 
+        // est la console définit par ton système d'exploitation
 
-        System.out.println(s); // .println() ajoute automatiquement un retour de ligne
+        // .println() ajoute automatiquement un retour de ligne
+        System.out.println(s); 
 
-        System.out.print(s); //.print() affiche seulement le texte (sans retour de ligne)
+        //.print() affiche seulement le texte (sans retour de ligne)
+        System.out.print(s); 
+        System.out.print(", " + n);
+        System.out.print(", " + d + "\n"); // \n est le caractère pour un retour de ligne
 
         
-        // ENTRÉES AU CONSOLE
+        //-----------ENTRÉES À LA CONSOLE------------//
+
         // Tu dois créer un objet de type Scanner
-        // System.in est aussi la console définit par ton système d'exploitation
+
+        // System.in 
+        // est la console définit par ton système d'exploitation
         Scanner input = new Scanner(System.in);
 
-        // Indiquer à l'utilisateur d'entreer quelque chose
+        // Indiquer à l'utilisateur d'entrer quelque chose
         System.out.println("Taper un nombre décimal ('.' est le symbole décimal)");
-        String getNum = input.nextLine(); // .nextLine() est la méthode pour capter une ligne de texte à la console
-        double num = Double.parseDouble(getNum); // convertir la valeur saisie en double
-    
+
+        // Saisir le texte entré avec la méthode .nextLine()
+        String getNum = input.nextLine();
+
+        // Convertir le texte capté en valeur numérique (de type double)
+        // --> cette étape peut générer une erreur si le texte n'a pas 
+        //     le format approprié
+        double num = Double.parseDouble(getNum);
+        
+        // Confirmer le résultat avec un message à la console
         System.out.println("Tu as inscrit le nombre " + num);
         
-        System.out.
-
-        input.close(); // fermer / détruire le Scanner sur la console (System.in)
+        // À la fin de la méthode main()...
+        // fermer/tuer le Scanner qui observe la console / System.in
+        input.close(); 
     }
 }
