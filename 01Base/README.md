@@ -115,10 +115,12 @@ Il y a quelques méthodes possibles pour utiliser la sortie standard.
 
 La console à utiliser **pour saisir du texte** est définie par par Java dans l'objet `System.in`. Généralement, `System.in` réfère à la même console utilisée pour lancer la commande `java`. Cette console s'appelle **l'entrée standard**.
 
-Pour saisir des valeurs via l'entrée standard, il faut créer un objet de type `Scanner` qui "écoutera" tous les caractères qui sont affichés à la console et qui peut, via une variété de méthodes, retourner des parties de ce texte au programme.
+Pour saisir des valeurs via l'entrée standard, il faut créer un objet de type `Scanner` qui 
+* accumule tous les caractères qui sont tapés à la console; 
+* peut, via une variété de méthodes, retourner des parties de ce texte au programme.
 
 Pour utiliser des objets de type `Scanner` il y a trois étapes :
-1. Importer la définition;
+1. Importer la définition d'un `Scanner`;
 2. Déclarer un objet de type `Scanner`;
 3. Utiliser des méthodes de `Scanner` dans le programme.
 
@@ -137,7 +139,7 @@ Scanner stdin = new Scanner(System.in);
 
 Dans cet exemple on a nommé notre `Scanner` "stdin".
 
->On doit créer UN SEUL OBJET SCANNER par programme. Ce `Scanner` unique prend *tous* le texte tapé à la console. Si on définit plus qu'un `Scanner`, c'est possible qu'ils interfèrent l'un avec l'autre. De plus, on peut penser que fermer un `Scanner` spécifique laisse les autres actifs, mais ce n'est pas le cas. Fermer n'importe quel `Scanner` ferme la communication avec la console `System.in` pour le reste du programme.
+>On doit créer UN SEUL OBJET SCANNER par programme. Ce `Scanner` unique prend *tous* le texte tapé à la console. Si on définit plus qu'un `Scanner`, c'est possible qu'ils interfèrent l'un avec l'autre. De plus, on peut penser que fermer un `Scanner` spécifique laisse les autres actifs, mais ce n'est pas le cas. Fermer n'importe quel `Scanner` ferme la communication avec la console `System.in` pour le reste du programme incluant les autres `Scanner`.
 
 3️⃣ Finalement, après avoir communiquer clairement *à l'utilisateur* notre intention via des messages à la console, on peut saisir sa réponse avec des méthodes de `Scanner`.
 
