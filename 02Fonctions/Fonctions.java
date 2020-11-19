@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /*
 ABSTRACTION
 Cacher les détails de comment quelque chose fonctionne derrière une structure plus simple
@@ -27,9 +25,7 @@ public class Fonctions
      * Il a un paramètre de type String[] qui s'appelle args
     */
     public static void main(String[] args) 
-    {
-        Scanner stdin = new Scanner(System.in);
-        
+    {    
         System.out.println(3);
         /*  Voici la "signature" de println dans ce cas :
             void java.io.PrintStream.println(int x)
