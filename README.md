@@ -18,4 +18,4 @@ Ces scripts sont ceux que vous pouvez utiliser avec l'installation portable de J
 
 Noter que les scripts sont copiés et collés à la racine de chaque projet-gabarit. C'est un détail important car vous devriez travailler avec votre dossier de **projet** comme le dossier racine dans VS Code. Ayant des copies des scripts à la racine de vos projets vous permet de les utiliser directement sans ajouter de chemin. Comme ça, ils sont aussi faciles à utiliser que les commandes naturelles `javac` et de `java`.
 
->Si tu as une installation valide de Java (où la commande `java --version` t'affiche l'information sur la version et aucune erreur), ces scripts sont inutiles.
+>Si tu as une installation valide de Java (où la commande `java --version` t'affiche l'information sur la version et aucune erreur), ces scripts sont inutiles. Utiliser les commandes `javac` et `java` directement.
