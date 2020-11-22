@@ -5,16 +5,29 @@ et facile à manipuler.
 
 
 FONCTION
-Cache un paquet de déclarations derrière un seul nom intuitif > On appelle le nom et le
-programme fera tout ce que le nom cache.
+Abstraction quic ache un paquet de déclarations derrière un seul nom intuitif.
+> On appelle seulement le nom et le programme fera tout ce que le nom cache.
 
-Structure d'une fonction
+
+SIGNATURE d'une fonction
 ------------------------
 <type de retour> <nom>(<paramètres>)
 
 Le fonctions peuvent :
-* avoir ou ne pas avoir de paramètres
-* avoir ou ne pas avoir de type de retour
+* avoir ou ne pas avoir de paramètres. Il faut inclure des parenthèses 
+    vides () après le nom s'il n'y a aucun paramètre.
+* avoir ou ne pas avoir de valeur de retour. Il faut spécifier le 
+    type "void" s'il n'y a aucune valeur de retour.
+
+
+STRUCTURE d'une fonction
+------------------------
+signature
+{
+    corps -> le code à exécuter en appelant la fonction
+             (remarquer que le corps est enfermé par une
+              paire d'accolades {})
+}
 
 */
 
@@ -27,7 +40,7 @@ public class Fonctions
     public static void main(String[] args) 
     {    
         System.out.println(3);
-        /*  Voici la "signature" de println dans ce cas :
+        /*  La "signature" de println dans ce cas :
             void java.io.PrintStream.println(int x)
 
             PARAMÈTRE. Le paramètre de la fonction println est int x
@@ -49,7 +62,7 @@ public class Fonctions
 
         // appel de la fonction funcTwoParamsWithReturn
         int sum = funcTwoParamWithReturn(13, 21);
-        funcOneParam(sum);
+        funcOneParam(sum); // appel "bonus" de funcOneParam
 
     }
 
@@ -78,7 +91,7 @@ public class Fonctions
         System.out.println("the sum of your values is: " + sum);
     }
 
-    /** Notre propre fonction avec deux paramètres 
+    /** Notre propre fonction avec deux paramètres ET une valeur de retour
      * les paramètres sont séparés par des virgules entre les parenthèses
      * 
      * On est limité à UNE SEULE VALEUR DE RETOUR par fonction
