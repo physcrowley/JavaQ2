@@ -14,7 +14,6 @@ Assurez-vous de noter le sens des termes suivants :
 * Argument (et la différence avec un paramètre)
 * Appel de fonction (et la différence avec la définition d'une fonction)
 
-
 ## Mot-clés
 
 Assurez-vous de remarquer comment les mot-clés suivants sont appliqués en lien avec les fonctions :

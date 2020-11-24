@@ -5,7 +5,7 @@ et facile à manipuler.
 
 
 FONCTION
-Abstraction quic ache un paquet de déclarations derrière un seul nom intuitif.
+Abstraction qui cache un paquet de déclarations derrière un seul nom intuitif.
 > On appelle seulement le nom et le programme fera tout ce que le nom cache.
 
 
