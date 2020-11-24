@@ -45,7 +45,7 @@ class Base
         
         //-----------ENTRÉES À LA CONSOLE------------//
 
-        // Tu dois créer un objet de type Scanner
+        // Tu dois créer UN SEUL objet de type Scanner
 
         // System.in 
         // est la console définit par ton système d'exploitation
