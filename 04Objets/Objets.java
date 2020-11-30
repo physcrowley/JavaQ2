@@ -3,7 +3,7 @@
 Types natifs : int, double, etc. 
     --> seulement une valeur
 
-Objets : String, Scanner, cette classe "Objets"
+Objets : String, Scanner, cette classe "Objets", Integer, etc.
     --> valeurs (champs/attributs) et 
     --> comportements (méthodes/fonctions)
 
@@ -51,11 +51,13 @@ public class Objets
         for (int i = 0; i < nums.length; i++) // boucle typique pour TRAVAILLER avec les valeurs d'un tableau
         {
             System.out.print(nums[i] + ", "); // accéder aux valeurs avec un indice, i
-            if (i == nums.length - 1) System.out.println(); // retour de ligne
+            if (i == nums.length - 1) System.out.println(); // retour de ligne à la fin
         }
 
         // Exemple. Tableau vide de taille 6
-        String[] noms = new String[6]; // mot-clé new; la taille du tableau spécifiée entre crochets
+        String[] noms = new String[6]; 
+        // mot-clé "new" crée un objet du type qui le suit; la taille est spécifiée entre crochets
+
         noms[0] = "Wesley"; // assigner les valeurs individuelles par la suite
         noms[1] = "Simon";
         noms[2] = "Zachary";
@@ -102,7 +104,7 @@ public class Objets
 
         Random new_num = new Random(); // un objet pour générer des valeurs aléatoires
 
-        // Créer une liste de 10 valeurs aléatoires
+        // Créer et afficher une liste de 10 valeurs aléatoires
         for (int i = 0; i < 10; i++) values.add(new_num.nextInt(100));
         System.out.println(values);
 
