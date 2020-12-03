@@ -66,6 +66,7 @@ public class Booleans {
         */
     }
 
+    /** Méthode simple pour inverser la valeur d'un booléen, true <--> false */
     static boolean toggle(boolean b)
     {
         return !b;
