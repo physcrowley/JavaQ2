@@ -26,9 +26,31 @@ import java.util.Scanner;
 
 public class Objets
 {
-    Scanner input = new Scanner(System.in); // variable -> un attribut de la classe Objets
+    //---champs (ou attributs ou valeurs) de la classe Objets---
     
-    public static void main(String[] args) // fonction -> un comportement de la classe Objets
+    // les champs sont tous des variables
+    
+    Scanner input = new Scanner(System.in);
+
+
+    //---méthodes (comportements) de la classe Objets---
+
+    /* 
+       Normalement, quand on définit une classe qui sera utilisée 
+        pour définir des objets, la classe n'inclut pas de méthode
+        main().
+       Une application typique inclut une seule classe principale
+        (celle qu'on nomme quand on lance la commande `java`) avec 
+        une méthode main() et les autres classes sont utilisées pour
+        définir des objets utiles à l'application.
+        
+       Voir les exemples où ClassesEtObjets est la classe principale
+        est MonTableau et Vecteurs2D sont des classes qui définissent
+        des objets pour une structure et une relation plus typique entre
+        les classes d'une application.
+    */
+    
+    public static void main(String[] args)
     {
         
         String s = "WoHoOoO!"; // "WoHoOoO!" est la valeur de l'objet s (de type String)
@@ -108,6 +130,7 @@ public class Objets
         for (int i = 0; i < 10; i++) values.add(new_num.nextInt(100));
         System.out.println(values);
 
+        
         // Exemple d'algorithme de tri (Insertion Sort)
         for (int i = 0; i < values.size() - 1; i++) // jusqu'à l'avant-dernier élément
         {
