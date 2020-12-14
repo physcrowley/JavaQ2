@@ -1,3 +1,4 @@
+package edu.ics4u.objets;
 /**
  * un objet qui contient des éléments de vecteurs en 2 dimensions
  * 

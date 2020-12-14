@@ -1,3 +1,4 @@
+package edu.ics4u.objets;
 /**
  * contient un tableau et une méthode pour trouver la valeur maximum
  * 

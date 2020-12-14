@@ -1,3 +1,4 @@
+package edu.ics4u.objets;
 /**
  * Une classe est une définition
  * 
