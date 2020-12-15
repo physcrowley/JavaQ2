@@ -2,6 +2,31 @@
 
 Ce dossier contient tous les exemples et une bonne partie des notes de cours pour le 2e quadrimestre.
 
+## Dossiers `src` et `bin`
+
+À partir du projet *04Objets*, les projets sont organisés dans des packages à l'intérieur du dossier `src`, compilant les fichiers dans la structure appropriée dans le dossier `bin`.
+
+Le domaine pour les packages est `edu.ics4u` avec le dernier niveau du package nommé pour la leçon spécifique.
+
+```
+JavaQ2
+|---00Structure
+|---...
+|---bin
+|---src
+|   `---edu
+|       `---ics4u
+|           |---objets
+|           |---poly
+|           `---...
+|---launch-objets.sh
+`---launch-poly.sh
+```
+
+Les fichiers de configuration `launch-<nom>.sh` et `launch-<nom>.bat` (qui incluent les commandes `javac` et `java` pour chaque projet) se trouvent à la racine de l'espace de travail.
+
+>Voir le [README.md](./ProjetStandard/README.md) dans le gabarit de ProjetStandard pour les détails sur ce type d'organisation de projet.
+
 ## Gabarits de projets
 
 Il y a deux dossiers de projets-gabarits ici :
