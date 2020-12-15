@@ -30,7 +30,7 @@ package edu.ics4u.poly;
  * ne sont pas dans la classe mère, mais c'est généralement déconseillé. On
  * verra pourquoi dans quelques exemples.
  * <p>
- * COMPOSITION - la composition est lorsqu'une classe inclut dans ces champs
+ * COMPOSITION - la composition est lorsqu'une classe inclut dans ses champs
  * une INTERFACE qui peut avoir plusieurs implémentations différentes. Une
  * classe qui bénéficie de la composition n'a rien de différent à déclarer
  * dans sa signature. Tout le travail d'ajouter un comportement polymorphique
