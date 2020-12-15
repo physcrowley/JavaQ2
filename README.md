@@ -4,7 +4,9 @@ Ce dossier contient tous les exemples et une bonne partie des notes de cours pou
 
 ## Dossiers `src` et `bin`
 
-À partir du projet *04Objets*, les projets sont organisés dans des packages à l'intérieur du dossier `src`, compilant les fichiers dans la structure appropriée dans le dossier `bin`.
+À partir du projet *04Objets*, les projets sont organisés comme *Projet Standard* dans des packages à l'intérieur du dossier `src`, compilant les fichiers dans la structure appropriée dans le dossier `bin`.
+
+>Les projets avant ça - de 00 à 04 - sont simplement organisés comme des *Projet Simple* sans structure interne.
 
 Le domaine pour les packages est `edu.ics4u` avec le dernier niveau du package nommé pour la leçon spécifique.
 
