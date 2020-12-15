@@ -15,10 +15,10 @@ package edu.ics4u.poly;
  * avoir UN parent, ce qu'on appelle la "classe mère". Les enfants s'appellent 
  * les "classes filles".
  * <p>
- * On dit à Java qu'une classe hérite d'une autre avec le mot-clé `extends`
+ * On dit à Java qu'une classe hérite d'une autre avec le mot-clé {@code extends}
  * après le nom de la classe dans sa signature. Par exemple :
  * <p>
- * {@code public class Bird extends Animal {}}
+ * <code> public class Bird extends Animal {}</code>
  * <p>
  * Les classes filles incluent tous les champs et toutes les méthodes de la
  * classe mère. Les classes filles peuvent s'en servir directement ou 
@@ -38,10 +38,10 @@ package edu.ics4u.poly;
  * <p>
  * On déclare une INTERFACE avec la signature :
  * <p>
- * {@code public interface MyInterface {}}
+ * <code> public interface MyInterface {}</code>
  * <p>
  * Le corps d'une interface est simplement une liste de signatures de méthodes
- * vides comme {@code void crier();}. Noter le ";" à la fin de la ligne. Une
+ * vides comme {@code void crier();}. Noter le {@code ;} à la fin de la ligne. Une
  * interface est UN CONTRAT -> toutes les classes qui implémentent une interface
  * DOIVENT écrire un corps pour chaque méthode annoncée dans l'interface. C'est
  * comme ça qu'on atteint des comportements différents en incluant une seule
@@ -55,24 +55,29 @@ package edu.ics4u.poly;
  * mère Animal et des classes filles Bird, Dog, Cat. Dans notre application, on
  * déclare alors nos objets comme ceci :
  * <p>
- * {@code 
- * Bird duck = new Bird();
- * Dog ruff = new Dog();
- * Cat whiskers = new Cat();
+ * <code>
+ * Bird duck = new Bird();<p>
+ * Dog ruff = new Dog();<p>
+ * Cat whiskers = new Cat();<p>
  * Animal[] menagerie = {duck, ruff, whiskers}; // polymorphisme: Bird est un Animal, etc.
- * }
+ * </code>
  * <p>
  * Pour la composition, dans notre classe Animal, on déclare un champs qui est l'interface
  * FaireUnSon, par exemple:
  * <p>
- * {@code 
- * public class Animal { FaireUnSon monSon; }
- * }
+ * <code> public class Animal { FaireUnSon monSon; }</code>
+ * <p>
+ * Chaque interface peut être implémenté de différentes façons par des classes qui utilisent
+ * le mot-clé {@code implements} dans la signature, par exemple :
+ * <p>
+ * <code> 
+ * public class Bark implements FaireUnSon { public void monSon() {System.out.prinln("Woof!");} }
+ * </code>
  * <p>
  * Si l'interface FaireUnSon est implémenté dans des classes Sing, Bark, Meow, on peut alors
  * avoir cette déclaration dans les classes filles Bird, Cat et Dog: 
  * <p>
- * {@code
+ * <code>
  * public class Bird extends Animal
  * {
  *      Bird()
@@ -80,6 +85,7 @@ package edu.ics4u.poly;
  *          this.monSon = new Sing();
  *      }
  * }
+ * <p>
  * public class Cat extends Animal
  * {
  *      Cat()
@@ -87,6 +93,7 @@ package edu.ics4u.poly;
  *          this.monSon = new Meow();
  *      }
  * }
+ * <p>
  * public class Dog extends Animal
  * {
  *      Dog()
@@ -94,7 +101,7 @@ package edu.ics4u.poly;
  *          this.monSon = new Bark();
  *      }
  * }
- * }
+ * </code>
  */
 public class Polymorphisme
 {
@@ -123,6 +130,17 @@ public class Polymorphisme
         une classe mais bien accessible à toutes les classes et c'est facile
         d'écrire une nouvelle implémentation de l'interface si on veut ajouter
         des nouveaux comportements.
+        */
+
+        /*
+        La façon que les classes ont été crées - avec les comportements implémentés
+        via des interfaces - suit une structure de développement de projets
+        orientés objet qui s'appelle le STRATEGY PATTERN où chaque interface est
+        une des "stratégies" que les classes utilisent selon leur besoin spécifique
+        en choissisant l'implémentation appropriée.
+
+        Se rappeler que les stratégies (interfaces) sont implémentées dans des 
+        CLASSES avec le mot-clé `implements`.
         */
     }
 }
