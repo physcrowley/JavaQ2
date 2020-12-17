@@ -1,3 +1,5 @@
+rem Google ne permet pas le téléversement de fichiers `.bat` - changer le '.' avec un '-' au besoin
+rem    par exemple : launch.bat --> launch-bat 
 javac -d bin ^
 src/edu/ics4u/poly/FaireUnSon.java ^
 src/edu/ics4u/poly/Bark.java ^
