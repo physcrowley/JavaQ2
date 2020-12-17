@@ -109,7 +109,7 @@ public class Polymorphisme
     {
         // Voir les classes pour des exemples d'héritage ("extends")
         // et de composition (inclusion d'une interface comme champ)
-        Animal unknown = new Animal();
+        //Animal unknown = new Animal(); //ne peut pas créer un objet à partir d'une classe abstraite
         Bird tweety = new Bird();
         Cat fluffy = new Cat();
         Dog patches = new Dog();
@@ -117,7 +117,7 @@ public class Polymorphisme
         // polymorphisme via héritage
         //      Bird, Cat et Dog sont aussi de type Animal
         //      car ils sont des classes filles de la classe Animal
-        Animal[] menagerie = {unknown, tweety, fluffy, patches};
+        Animal[] menagerie = {tweety, fluffy, patches};
 
         // polymorphisme via composition
         //      On n'a pas écrit de code qui change le comportement
