@@ -6,7 +6,7 @@ Comme prérequis, vous devez:
 * créer un compte GitHub ([ici](https://github.com/))
 * (facultativement) installez Git (depuis [ici](https://git-scm.com/)) pour une utilisation / de la pratique sur la ligne de commande. Cette étape est facultative car l'EDI Eclipse fournit déja une version de Git appelée Egit qui est accessible en utilisant le logiciel.
 
-#### Séquence de travail (*workflow*) générale
+## Séquence de travail (*workflow*) générale
 
 **Git** est un logiciel de gestion des versions qui fonctionne en utilisant une approche en trois étapes pour les fichiers qui sont "suivis", soit les fichiers dans un `repo` Git:
 
@@ -36,7 +36,7 @@ Voici quelques conseils pour **éviter les conflits de fusion**:
 * Divisez le travail afin qu'une seule personne travaille sur un fichier (ou un sous-ensemble de fichiers) à la fois
 * Utilisez la messagerie, comme les `Issues` de GitHub, pour configurer des listes de tâches et les attribuer à des membres spécifiques de l'équipe. Les autres membres de l'équipe peuvent ensuite commenter chaque `Issue` / tâche au lieu de travailler dans les fichiers s'ils ont besoin de suggérer des modifications.
 
-#### Initialisation d'un `repo` Git sur un projet existant
+## Initialisation d'un `repo` Git sur un projet existant
 
 Pour un projet créé d'abord dans Eclipse (avec ou sans Maven), vous devrez:
 
@@ -47,7 +47,7 @@ Pour un projet créé d'abord dans Eclipse (avec ou sans Maven), vous devrez:
 
 > Si la branche par défaut s'appelle `master`, il est maintenant recommandé de la changer en `main` en ouvrant le dossier branches, en faire un clic droit sur la branche `master` et en sélectionnant Rename. <p> Vous devriez faire ceci **avant** de faire un `push` vers GitHub (sinon il faudra aussi modifier le nom de la branche sur GitHub, doublant le travail).
 
-#### Création d'un nouveau répertoire GitHub pour un projet existant
+## Création d'un nouveau répertoire GitHub pour un projet existant
 
 Pour un projet créé d'abord sur votre ordinateur, vous devrez:
 
@@ -55,14 +55,14 @@ Pour un projet créé d'abord sur votre ordinateur, vous devrez:
 * créer un nouveau répertoire sans ajouter de fichiers
 * copiez le lien vers ce nouveau repo
 
-#### Pousser votre projet existant sur GitHub
+## Pousser votre projet existant sur GitHub
 
 * Dans l'onglet Git Staging, ou dans le sous-menu Team, sélectionnez `Push`.
 * Collez l'URI GitHub copié précédemment dans la case appropriée
 * assurez-vous que le nom de la branche pour le "remote" est `main`
 * cliquez sur OK et à nouveau sur toutes les fenêtres d'aperçu et de confirmation.
 
-#### Synchronisation des modifications vers et depuis GitHub
+## Synchronisation des modifications vers et depuis GitHub
 
 Lorsque vous **ouvrez votre projet** dans Eclipse, vous devez d'abord:
 
