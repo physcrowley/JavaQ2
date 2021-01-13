@@ -6,7 +6,7 @@ JavaFX est un framework qui gère les interfaces graphiques en Java pour les app
 * **contrôles** qui réagissent aux interactions des utilisateurs
 * comme tous les autres programmes Java, un **point d'entrée** pour l'application. En Java, c'est la méthode `main()`. En JavaFX, c'est la classe qui contient la méthode `main()`. Cette classe `extends` la classe JavaFX `Application` et a une structure prédéfinie.
 
-Pour les programmes JavaFX simples, le graphe de scène est défini dans le point d'entrés, soit la classe d'application.
+Pour les programmes JavaFX simples, le graphe de scène est défini dans le point d'entrée, soit la classe d'application.
 
 Pour les programmes JavaFX plus grands ou qui utilisent plusieurs scènes ou fenêtres, le ou les graphes de scène sont définis dans un fichier spécial avec l'extension `.fxml`. Le fichier `fmxl` est similaire aux fichiers `html` qui structurent les sites Web : ils utilisent tous deux des balises imbriquées. De même, les styles peuvent être définis dans le fichier `fxml` directement ou avec un fichier de styles `css`, tout comme le font les pages `html`. Dans ces programmes, au lieu d'être *défini* dans la classe d'application, le graphe de scène est *chargé* à partir du fichier `fxml` par une fonction `FXMLLoader` spéciale dans la classe d'application.
 
