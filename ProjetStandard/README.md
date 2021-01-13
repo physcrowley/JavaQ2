@@ -7,6 +7,7 @@
 >* on emballe le dossier `bin` qui contient les fichiers bytecode `.class` pour distribuer notre programme à des utilisateurs
 >* on emballe le dossier `src` qui contient le code source `.java` pour collaborer avec d'autres développeurs
 
+**Voir aussi** cette [présentation Google Slides sur le sujet](https://docs.google.com/presentation/d/1daL6aH9bXWyI7mgdobgBGeHhUC6Ah6SemnDNYO8VniI/view).
 
 # Les packages en Java
 
