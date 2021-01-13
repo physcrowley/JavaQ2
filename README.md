@@ -2,13 +2,22 @@
 
 Ce dossier contient tous les exemples et une bonne partie des notes de cours pour le 2e quadrimestre.
 
+## Encodage du texte
+
+Les fichiers Java ont été encodés en **Windows 1252** afin de faciliter l'affichage du texte français (unicode) à la ligne de commande. Tous les autres fichiers sont encodés en **UTF8**, le standard international actuel.
+
+Type de fichier | Encodage
+--- | ---
+`.java` | Windows 1252
+tous les autres | UTF8
+
 ## Dossiers `src` et `bin`
 
-À partir du projet *04Objets*, les projets sont organisés comme *Projet Standard* dans des packages à l'intérieur du dossier `src`, compilant les fichiers dans la structure appropriée dans le dossier `bin`.
+Les projets *05Objets* et *06Polymorphisme* sont organisés comme *Projet Standard* dans des packages à l'intérieur du dossier `src`, compilant les fichiers dans le dossier `bin`.
 
 >Les projets avant ça - de 00 à 04 - sont simplement organisés comme des *Projet Simple* sans structure interne.
 
-Le domaine pour les packages est `edu.ics4u` avec le dernier niveau du package nommé pour la leçon spécifique.
+Le *domaine* pour les packages du cours est `edu.ics4u` avec le dernier niveau du package nommé pour la leçon spécifique.
 
 ```
 JavaQ2
@@ -36,9 +45,9 @@ Il y a deux dossiers de projets-gabarits ici :
 * ProjetSimple
 * ProjetStandard
 
-Le **projet simple** est un dossier sans structure interne. Ce gabarit convient pour plusieurs de nos premiers programmes. Dès qu'on commence l'orienté objet, par contre, c'est mieux de passer au projet standard.
+Le [projet simple](ProjetSimple) est un dossier sans structure interne. Ce gabarit convient pour plusieurs de nos premiers programmes. Dès qu'on commence l'orienté objet, par contre, c'est mieux de passer au projet standard.
 
-Le **projet standard** inclut une séparation des fichiers source et des fichiers compilés. Le `README.md` à la racine du gabarit explique :
+Le [projet standard](ProjetStandard) inclut une séparation des fichiers source et des fichiers compilés. Le `README.md` à la racine du gabarit explique :
 
 * le pourquoi de la séparation `src` et `bin`
 * le concept des **packages**
@@ -48,7 +57,7 @@ Le **projet standard** inclut une séparation des fichiers source et des fichier
 
 Ces scripts sont ceux que vous pouvez utiliser avec l'installation portable de Java sur les postes du local informatique où les commandes standards `javac` et `java` ne fonctionnent pas.
 
->Si tu as une installation valide de Java (où la commande `java --version` t'affiche l'information sur la version et aucune erreur), ces scripts sont inutiles. Utiliser les commandes `javac` et `java` directement.
+>Si tu as une installation valide de Java (où la commande `java --version`  et la commande `javac --version` t'affichent l'information sur la même version et ne donnent aucune erreur), ces scripts sont inutiles. Utiliser les commandes `javac` et `java` directement.
 
 Noter que les scripts sont copiés et collés à la racine de chaque projet-gabarit. C'est un détail important car vous devriez travailler avec votre dossier de **projet** (simple) comme le dossier racine dans VS Code (les projets standard ont tous leur racine directement dans l'espace de travail). Ayant des copies des scripts à la racine de vos projets vous permet de les utiliser directement sans ajouter de chemin. Comme ça, ils sont aussi faciles à utiliser que les commandes naturelles `javac` et de `java`.
 
