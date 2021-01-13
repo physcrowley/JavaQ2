@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-/** La rÃ©cursivitÃ© est quand une fonction s'appelle elle-mÃªme */
+/** La récursivité est quand une fonction s'appelle elle-même */
 public class Recursion 
 {
     public static void main(String[] args) 
@@ -21,7 +21,7 @@ public class Recursion
         stdin.close();
     }
 
-    /** DÃ©termine si un entier est pair */
+    /** Détermine si un entier est pair */
     public static boolean isEven(int a)
     {
         if (a >= 2) {return isEven(a - 2);}
@@ -35,7 +35,7 @@ public class Recursion
     }
 
 
-    /** utiliser la rÃ©cursivitÃ© pour gÃ©rer les erreurs */
+    /** utiliser la récursivité pour gérer les erreurs */
     static int getNum(Scanner input)
     {
         System.out.println("Entrer un nombre entier");
@@ -49,9 +49,9 @@ public class Recursion
         {
             // communiquer avec l'utilisateur
             System.out.println("ce n'est pas un nombre entier");
-            // consommer la ligne qui contient la valeur erronÃ©e
+            // consommer la ligne qui contient la valeur erronée
             input.nextLine(); 
-            // essayer encore, rÃ©cursivement
+            // essayer encore, récursivement
             return getNum(input);
         }
     }

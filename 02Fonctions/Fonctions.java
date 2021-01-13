@@ -1,22 +1,22 @@
 /*
 ABSTRACTION
-Cacher les dÃ©tails de comment quelque chose fonctionne derriÃ¨re une structure plus simple
-et facile Ã  manipuler.
+Cacher les détails de comment quelque chose fonctionne derrière une structure plus simple
+et facile à manipuler.
 
 
 FONCTION
-Abstraction qui cache un paquet de dÃ©clarations derriÃ¨re un seul nom intuitif.
+Abstraction qui cache un paquet de déclarations derrière un seul nom intuitif.
 > On appelle seulement le nom et le programme fera tout ce que le nom cache.
 
 
 SIGNATURE d'une fonction
 ------------------------
-<type de retour> <nom>(<paramÃ¨tres>)
+<type de retour> <nom>(<paramètres>)
 
 Le fonctions peuvent :
-* avoir ou ne pas avoir de paramÃ¨tres. Il faut inclure des parenthÃ¨ses 
-    vides () aprÃ¨s le nom s'il n'y a aucun paramÃ¨tre.
-* avoir ou ne pas avoir de valeur de retour. Il faut spÃ©cifier le 
+* avoir ou ne pas avoir de paramètres. Il faut inclure des parenthèses 
+    vides () après le nom s'il n'y a aucun paramètre.
+* avoir ou ne pas avoir de valeur de retour. Il faut spécifier le 
     type "void" s'il n'y a aucune valeur de retour.
 
 
@@ -24,8 +24,8 @@ STRUCTURE d'une fonction
 ------------------------
 signature
 {
-    corps -> le code Ã  exÃ©cuter en appelant la fonction
-             (remarquer que le corps est enfermÃ© par une
+    corps -> le code à exécuter en appelant la fonction
+             (remarquer que le corps est enfermé par une
               paire d'accolades {})
 }
 
@@ -34,8 +34,8 @@ signature
 public class Fonctions
 {
     /** Main est une fonction
-     * Il ne retourne rien... En Java, il faut spÃ©cifier le type "void" dans ce cas
-     * Il a un paramÃ¨tre de type String[] qui s'appelle args
+     * Il ne retourne rien... En Java, il faut spécifier le type "void" dans ce cas
+     * Il a un paramètre de type String[] qui s'appelle args
     */
     public static void main(String[] args) 
     {    
@@ -43,11 +43,11 @@ public class Fonctions
         /*  La "signature" de println dans ce cas :
             void java.io.PrintStream.println(int x)
 
-            PARAMÃˆTRE. Le paramÃ¨tre de la fonction println est int x
-            ARGUMENT. Quand on appelle println, on lui a donnÃ© la valeur 3. La valeur passÃ©e
+            PARAMÈTRE. Le paramètre de la fonction println est int x
+            ARGUMENT. Quand on appelle println, on lui a donné la valeur 3. La valeur passée
             quand on appelle une fonction s'appelle l'argument.
 
-            En appelant la fonction, on complÃ¨te l'assignation de variable suivante :
+            En appelant la fonction, on complète l'assignation de variable suivante :
             int x = 3;
         */
 
@@ -66,24 +66,24 @@ public class Fonctions
 
     }
 
-    /** Notre propre fonction qui ne prend pas de paramÃ¨tre 
+    /** Notre propre fonction qui ne prend pas de paramètre 
      * 
-     * On le dÃ©finit Ã  l'intÃ©rieur de la classe, mais Ã  l'extÃ©rieur de main.
-     * L'ordre ne dÃ©range pas parce que Java est une langue compilÃ©e.
+     * On le définit à l'intérieur de la classe, mais à l'extérieur de main.
+     * L'ordre ne dérange pas parce que Java est une langue compilée.
     */
     static void funcNoParameters()
     {
         System.out.println("You called a function with no parameters and no return value.");
     }
 
-    /** Notre propre fonction avec un paramÃ¨tre */
+    /** Notre propre fonction avec un paramètre */
     static void funcOneParam(int a)
     {
         System.out.println("double your value is: " + 2*a);
     }
 
-    /** Notre propre fonction avec deux paramÃ¨tres 
-     * les paramÃ¨tres sont sÃ©parÃ©s par des virgules entre les parenthÃ¨ses
+    /** Notre propre fonction avec deux paramètres 
+     * les paramètres sont séparés par des virgules entre les parenthèses
     */
     static void funcTwoParam(int a, int b)
     {
@@ -91,10 +91,10 @@ public class Fonctions
         System.out.println("the sum of your values is: " + sum);
     }
 
-    /** Notre propre fonction avec deux paramÃ¨tres ET une valeur de retour
-     * les paramÃ¨tres sont sÃ©parÃ©s par des virgules entre les parenthÃ¨ses
+    /** Notre propre fonction avec deux paramètres ET une valeur de retour
+     * les paramètres sont séparés par des virgules entre les parenthèses
      * 
-     * On est limitÃ© Ã  UNE SEULE VALEUR DE RETOUR par fonction
+     * On est limité à UNE SEULE VALEUR DE RETOUR par fonction
     */
     static int funcTwoParamWithReturn(int a, int b)
     {

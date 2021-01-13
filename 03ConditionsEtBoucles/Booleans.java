@@ -1,21 +1,21 @@
 /**
- * Exemples de boolÃ©ens et de l'opÃ©ration ternaire pour simplifier nos
+ * Exemples de booléens et de l'opération ternaire pour simplifier nos
  * conditions
  */
 public class Booleans {
     public static void main(String[] args) {
         /*
-            Un boolÃ©en peut seulement avoir 2 valeurs : true ou false
+            Un booléen peut seulement avoir 2 valeurs : true ou false
 
-            UTILITÃ‰ : indicateur / drapeau -> signaler un Ã©tat
+            UTILITÉ : indicateur / drapeau -> signaler un état
 
-            NOMS : commencent gÃ©nÃ©ralement avec "est" ou "is"
+            NOMS : commencent généralement avec "est" ou "is"
         */
 
         boolean isOn = false;
 
         // code qui duplique le comportement d'un bouton (un "toggle swithch")
-        if (isOn) // isOn doit Ãªtre true
+        if (isOn) // isOn doit être true
         {
             isOn = false;
             System.out.println("Off");
@@ -33,15 +33,15 @@ public class Booleans {
 
 
         /*
-            OpÃ©ration ternaire -> faÃ§on court de remplacer un if-else
+            Opération ternaire -> façon court de remplacer un if-else
 
-            Exigence -> le rÃ©sultat doit Ãªtre assignÃ© Ã  une variable oÃ¹ utiliser par le
+            Exigence -> le résultat doit être assigné à une variable où utiliser par le
             programme directement
 
             STRUCTURE
             <expression conditionnelle > ? <valeur si vrai> : <valeur si faux>
 
-            IMPLÃ‰MENTATION -> les chiffriers comme Excel et Sheets
+            IMPLÉMENTATION -> les chiffriers comme Excel et Sheets
             =if(<expression conditionnelle>; <valeur si vrai>; <valeur si faux>)
         */
 
@@ -54,7 +54,7 @@ public class Booleans {
         int b = 15;
         int biggest = a >= b ? a : b;
         System.out.printf("Nombres : %d, %d -> le plus grand : %d %d\n", a, b, biggest);
-        /* printf te permet d'insÃ©rer des valeurs dans un String
+        /* printf te permet d'insérer des valeurs dans un String
 
            Utiliser :
             %d pour un int (et les autres comme long, byte)
@@ -66,7 +66,7 @@ public class Booleans {
         */
     }
 
-    /** MÃ©thode simple pour inverser la valeur d'un boolÃ©en, true <--> false */
+    /** Méthode simple pour inverser la valeur d'un booléen, true <--> false */
     static boolean toggle(boolean b)
     {
         return !b;

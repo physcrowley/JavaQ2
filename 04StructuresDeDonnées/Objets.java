@@ -5,7 +5,7 @@ Types natifs : int, double, etc.
 
 Objets : String, Scanner, cette classe "Objets", Integer, etc.
     --> valeurs (champs/attributs) et 
-    --> comportements (mÃ©thodes/fonctions)
+    --> comportements (méthodes/fonctions)
 
 NOMS DES OBJETS
 Commencent par une lettre majuscule (A-Z).
@@ -19,7 +19,7 @@ Par : David Crowley, crowlda@ecolecatholique.ca
 */
 
 import java.util.HashMap;       // Noter que tous les objets (sauf l'exception String)
-import java.util.LinkedList;    // doivent Ãªtre importÃ©s.
+import java.util.LinkedList;    // doivent être importés.
 import java.util.Random;
 import java.util.Scanner;
 
@@ -33,19 +33,19 @@ public class Objets
     Scanner input = new Scanner(System.in);
 
 
-    //---mÃ©thodes (comportements) de la classe Objets---
+    //---méthodes (comportements) de la classe Objets---
 
     /* 
-       Normalement, quand on dÃ©finit une classe qui sera utilisÃ©e 
-        pour dÃ©finir des objets, la classe n'inclut pas de mÃ©thode
+       Normalement, quand on définit une classe qui sera utilisée 
+        pour définir des objets, la classe n'inclut pas de méthode
         main().
        Une application typique inclut une seule classe principale
         (celle qu'on nomme quand on lance la commande `java`) avec 
-        une mÃ©thode main() et les autres classes sont utilisÃ©es pour
-        dÃ©finir des objets utiles Ã  l'application.
+        une méthode main() et les autres classes sont utilisées pour
+        définir des objets utiles à l'application.
         
-       Voir les exemples oÃ¹ ClassesEtObjets est la classe principale
-        est MonTableau et Vecteurs2D sont des classes qui dÃ©finissent
+       Voir les exemples où ClassesEtObjets est la classe principale
+        est MonTableau et Vecteurs2D sont des classes qui définissent
         des objets pour une structure et une relation plus typique entre
         les classes d'une application.
     */
@@ -55,7 +55,7 @@ public class Objets
         
         String s = "WoHoOoO!"; // "WoHoOoO!" est la valeur de l'objet s (de type String)
 
-        s = s.toLowerCase(); // toLowerCase() est un comportement dÃ©fini pour l'objet s
+        s = s.toLowerCase(); // toLowerCase() est un comportement défini pour l'objet s
         System.out.println(s);
 
 
@@ -64,21 +64,21 @@ public class Objets
 
         //-----------TABLEAUX-----------------
         // type fixe, taille fixe, valeurs accessibles avec un indice
-        // --> pour des structures de taille connue; trÃ¨s rapide
+        // --> pour des structures de taille connue; très rapide
 
 
-        // Exemple. Tableau intialisÃ© avec des valeurs
-        int[] nums = {1,1,2,3,5,8,13,21,34}; // valeurs entre accolades, sÃ©parÃ©es par des virgules 
+        // Exemple. Tableau intialisé avec des valeurs
+        int[] nums = {1,1,2,3,5,8,13,21,34}; // valeurs entre accolades, séparées par des virgules 
 
         for (int i = 0; i < nums.length; i++) // boucle typique pour TRAVAILLER avec les valeurs d'un tableau
         {
-            System.out.print(nums[i] + ", "); // accÃ©der aux valeurs avec un indice, i
-            if (i == nums.length - 1) System.out.println(); // retour de ligne Ã  la fin
+            System.out.print(nums[i] + ", "); // accéder aux valeurs avec un indice, i
+            if (i == nums.length - 1) System.out.println(); // retour de ligne à la fin
         }
 
         // Exemple. Tableau vide de taille 6
         String[] noms = new String[6]; 
-        // mot-clÃ© "new" crÃ©e un objet du type qui le suit; la taille est spÃ©cifiÃ©e entre crochets
+        // mot-clé "new" crée un objet du type qui le suit; la taille est spécifiée entre crochets
 
         noms[0] = "Wesley"; // assigner les valeurs individuelles par la suite
         noms[1] = "Simon";
@@ -89,22 +89,22 @@ public class Objets
 
         for (String n : noms) // boucle pour LIRE les valeurs dans un tableau
         {
-            System.out.println(n); // n prend la valeur de chaque Ã©lÃ©ment du tableau, en sÃ©quence
+            System.out.println(n); // n prend la valeur de chaque élément du tableau, en séquence
         }
 
 
         /*---------AUTRES OBJETS UTILES-----------*/
 
         // HASHMAP
-        // types fixes, taille flexible, valeurs accessibles avec une clÃ©
-        // --> pour accÃ©der aux valeur par quelque chose d'autre qu'un chiffre
-        // --> accÃ¨s rapide avec une taille flexible
+        // types fixes, taille flexible, valeurs accessibles avec une clé
+        // --> pour accéder aux valeur par quelque chose d'autre qu'un chiffre
+        // --> accès rapide avec une taille flexible
         
         HashMap<String, Double> gradeBook = new HashMap<String, Double>();
         // HashMap est un objet qui contient d'autres types d'objets. Des objets comme
-        // des HashMap sont appelÃ©s "gÃ©nÃ©riques". On ajoute les types spÃ©cifiques
+        // des HashMap sont appelés "génériques". On ajoute les types spécifiques
         // qu'ils contiennent entre les chevrons <>. Dans le cas de HashMap, il faut
-        // indiquer les types pour la clÃ© (key) et pour la valeur (V) : HashMap<K, V>
+        // indiquer les types pour la clé (key) et pour la valeur (V) : HashMap<K, V>
 
         for (String n : noms)
         {
@@ -117,27 +117,27 @@ public class Objets
 
         // LINKEDLIST
         // types fixes, taille flexible, valeurs accessibles par recherche
-        // --> si on doit ajouter/enlever des Ã©lÃ©ments souvent
-        // --> si on veut trier souvent les Ã©lÃ©ments (les bouger)
+        // --> si on doit ajouter/enlever des éléments souvent
+        // --> si on veut trier souvent les éléments (les bouger)
 
         LinkedList<Integer> values = new LinkedList<Integer>();
-        // LinkedList est aussi un type gÃ©nÃ©rique qui peut contenir une
-        // variÃ©tÃ© de types (T) : LinkedList<T>
+        // LinkedList est aussi un type générique qui peut contenir une
+        // variété de types (T) : LinkedList<T>
 
-        Random new_num = new Random(); // un objet pour gÃ©nÃ©rer des valeurs alÃ©atoires
+        Random new_num = new Random(); // un objet pour générer des valeurs aléatoires
 
-        // CrÃ©er et afficher une liste de 10 valeurs alÃ©atoires
+        // Créer et afficher une liste de 10 valeurs aléatoires
         for (int i = 0; i < 10; i++) values.add(new_num.nextInt(100));
         System.out.println(values);
 
         
         // Exemple d'algorithme de tri (Insertion Sort)
-        for (int i = 0; i < values.size() - 1; i++) // jusqu'Ã  l'avant-dernier Ã©lÃ©ment
+        for (int i = 0; i < values.size() - 1; i++) // jusqu'à l'avant-dernier élément
         {
-            // l'Ã©lÃ©ment aprÃ¨s l'indice i (jusqu'au dernier Ã©lÃ©ment)
+            // l'élément après l'indice i (jusqu'au dernier élément)
             int sortMe = values.get(i+1);
 
-            // comparer des paires de valeurs de reculons Ã  travers la partie dÃ©jÃ  triÃ©e
+            // comparer des paires de valeurs de reculons à travers la partie déjà triée
             for (int j = i; j >= 0; j--) 
             {
                 if (sortMe < values.get(j))
@@ -147,7 +147,7 @@ public class Objets
                     values.set(j, sortMe);
                     values.set(j+1, temp);
                 }
-                else break; // passe au prochain Ã©lÃ©ment i dans la liste
+                else break; // passe au prochain élément i dans la liste
             }
         }
         System.out.println(values);
@@ -157,11 +157,11 @@ public class Objets
         /*----------STRUCTURE<-->LOGIQUE---------------//
                    STRUCTURE<-->ALGORITHME
 
-        Le choix de structure affecte comment tu Ã©cris la logique
+        Le choix de structure affecte comment tu écris la logique
         de ton programme. 
 
-        La bonne structure peut simplifier ton code Ã©normÃ©ment et le 
-        rendre plus facile Ã  maintenir/modifier. */
+        La bonne structure peut simplifier ton code énormément et le 
+        rendre plus facile à maintenir/modifier. */
 
     }
 }

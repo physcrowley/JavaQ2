@@ -1,15 +1,15 @@
 package edu.ics4u.objets;
 /**
- * Une classe est une dÃ©finition
+ * Une classe est une définition
  * 
- * Un objet est quelque chose qui vit en mÃ©moire, qui est crÃ©Ã© selon
- * la dÃ©finition dans une classe
+ * Un objet est quelque chose qui vit en mémoire, qui est créé selon
+ * la définition dans une classe
  * 
  * Les objets ont donc tous un type qui commence avec une majuscule
- * en Java, parce que le type est le nom de la classe qui dÃ©finit l'objet.
+ * en Java, parce que le type est le nom de la classe qui définit l'objet.
  * 
  * Dans une application, il y a aussi toujours une classe principale qui
- * dÃ©finit la mÃ©thode main(). Cette classe est la classe principale d'une
+ * définit la méthode main(). Cette classe est la classe principale d'une
  * mini application qui inclut aussi les classes MonTableau et Vecteurs2D.
  * 
  * David Crowley, crowlda@ecolecatholique.ca
@@ -21,17 +21,17 @@ public class ClassesEtObjets
     {
         String s = "";
         /* 
-        *   > String est une classe qui dÃ©finit un type
-        *   > s est un objet qui applique ces dÃ©finitions et accÃ¨de
-        *   aux mÃ©thodes de la classe String
+        *   > String est une classe qui définit un type
+        *   > s est un objet qui applique ces définitions et accède
+        *   aux méthodes de la classe String
         */
 
 
         // Objets de type MonTableau
 
         MonTableau tableau = new MonTableau(), tab2 = new MonTableau();
-            // le mot-clÃ© new est utilisÃ© pour crÃ©er un objet Ã  partir d'une
-            // dÃ©finition dans la classe
+            // le mot-clé new est utilisé pour créer un objet à partir d'une
+            // définition dans la classe
         tableau.tab = new int[] {1, 3, 5, 8, 0};
         tab2.tab = new int[] {-2, 5, -100, 73};
         System.out.printf("max1=%d, milieu=%d\n",tableau.getMax(), tableau.getMid());
@@ -43,9 +43,9 @@ public class ClassesEtObjets
         // Objet de type Vecteurs2D
 
         Vecteurs2D balle = new Vecteurs2D();
-            // le mot-clÃ© new est utilisÃ© pour crÃ©er un objet Ã  partir d'une
-            // dÃ©finition dans la classe
-        balle.vitesse[1] = 12; // vy... vx reste 0 (comme dÃ©finie dans la classe)
+            // le mot-clé new est utilisé pour créer un objet à partir d'une
+            // définition dans la classe
+        balle.vitesse[1] = 12; // vy... vx reste 0 (comme définie dans la classe)
         balle.bouger();
         System.out.println(balle);
         balle.bouger();

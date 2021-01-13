@@ -1,6 +1,6 @@
 package edu.ics4u.objets;
 /**
- * contient un tableau et une mÃ©thode pour trouver la valeur maximum
+ * contient un tableau et une méthode pour trouver la valeur maximum
  * 
  * David Crowley, crowlda@ecolecatholique.ca
  * 2020-12-08
@@ -12,15 +12,15 @@ public class MonTableau
     int[] tab;
 
 
-    // les mÃ©thodes de la classe
+    // les méthodes de la classe
 
     /** obtenir la valeur maximale dans le tableau */
     int getMax()
     {
         int max = this.tab[0];
-            // "this." rÃ©fÃ¨re Ã  l'objet qui appelle la fonction
+            // "this." réfère à l'objet qui appelle la fonction
             // et utilise donc les valeurs dans le tableau tab
-            // spÃ©cifique Ã  chaque objet en exÃ©cutant la mÃ©thode
+            // spécifique à chaque objet en exécutant la méthode
         
         for (int n : this.tab)
         {
@@ -32,20 +32,20 @@ public class MonTableau
     /** obtenir l'objet au milieu du tableau */
     int getMid()
     {
-        // la valeur Ã  l'indice du milieu, soit longueur / 2
+        // la valeur à l'indice du milieu, soit longueur / 2
         return this.tab[(this.tab.length-1)/2];
     }
     
-    /** DÃ©finir comment afficher l'objet quand on fait un print
+    /** Définir comment afficher l'objet quand on fait un print
      * 
-     * Cette mÃ©thode est dÃ©finie par dÃ©faut dans Objet.java... le grand-parent de
-     * tous les objets Java, mais produit une sÃ©rie de symboles au lieu de prÃ©senter
+     * Cette méthode est définie par défaut dans Objet.java... le grand-parent de
+     * tous les objets Java, mais produit une série de symboles au lieu de présenter
      * de l'information plus pertinente sur les valeurs de l'objet.
      * 
-     * Il faut que la signature soit exactement pareil Ã  ce que tu vois ci-dessous
+     * Il faut que la signature soit exactement pareil à ce que tu vois ci-dessous
      * 
-     * @return le String Ã  afficher -> ne pas imprimer dans cette mÃ©thode, mais
-     *          plutÃ´t dÃ©finir le String qui sera afficher dans un print
+     * @return le String à afficher -> ne pas imprimer dans cette méthode, mais
+     *          plutôt définir le String qui sera afficher dans un print
      */
     public String toString()
     {

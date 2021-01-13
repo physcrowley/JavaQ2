@@ -1,6 +1,6 @@
 package edu.ics4u.objets;
 /**
- * un objet qui contient des Ã©lÃ©ments de vecteurs en 2 dimensions
+ * un objet qui contient des éléments de vecteurs en 2 dimensions
  * 
  * David Crowley, crowlda@ecolecatholique.ca
  * 2020-12-08
@@ -13,7 +13,7 @@ public class Vecteurs2D
     int[] vitesse = {0, 0}; // {vx, vy}
 
 
-    // les mÃ©thodes de la classe
+    // les méthodes de la classe
 
     /** modifier la position de chaque dimension selon le vecteur vitesse */
     void bouger()
@@ -23,16 +23,16 @@ public class Vecteurs2D
     }
 
 
-    /** DÃ©finir comment afficher l'objet quand on fait un print
+    /** Définir comment afficher l'objet quand on fait un print
      * 
-     * Cette mÃ©thode est dÃ©finie par dÃ©faut dans Objet.java... le grand-parent de
-     * tous les objets Java, mais produit une sÃ©rie de symboles au lieu de prÃ©senter
+     * Cette méthode est définie par défaut dans Objet.java... le grand-parent de
+     * tous les objets Java, mais produit une série de symboles au lieu de présenter
      * de l'information plus pertinente sur les valeurs de l'objet.
      * 
-     * Il faut que la signature soit exactement pareil Ã  ce que tu vois ci-dessous
+     * Il faut que la signature soit exactement pareil à ce que tu vois ci-dessous
      * 
-     * @return le String Ã  afficher -> ne pas imprimer dans cette mÃ©thode, mais
-     *          plutÃ´t dÃ©finir le String qui sera afficher dans un print
+     * @return le String à afficher -> ne pas imprimer dans cette méthode, mais
+     *          plutôt définir le String qui sera afficher dans un print
      */
     public String toString()
     {

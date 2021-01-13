@@ -7,9 +7,9 @@ public class Tableaux
     public static void main(String[] args) 
     {
         String abc = "abcdefghijklmnopqrstuvwxyz";
-    // Longueur d'un String : .length() <-- une mÃ©thode
-    // Indexe d'un charactÃ¨re dans un String: .indexOf("texte")
-    // CaractÃ¨re Ã  un indexe : .charAt(index)
+    // Longueur d'un String : .length() <-- une méthode
+    // Indexe d'un charactère dans un String: .indexOf("texte")
+    // Caractère à un indexe : .charAt(index)
     int lenAbc = abc.length();
     int i = abc.indexOf("c");
     char c = abc.charAt(abc.length() - 2);
@@ -18,8 +18,8 @@ public class Tableaux
     char[] lettres = abc.toCharArray();
     // lettres est un tableau ("array")
     // Longueur du tableau : .length <-- un attribut
-    // indexe d'un caractÃ¨re : recherche avec une boucle
-    // caractÃ¨re Ã  un indexe : [index]
+    // indexe d'un caractère : recherche avec une boucle
+    // caractère à un indexe : [index]
     int len_lettres = lettres.length;
     for (int j = 0; j < len_lettres; j++)
     {

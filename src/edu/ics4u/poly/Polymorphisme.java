@@ -1,59 +1,59 @@
 package edu.ics4u.poly;
 
 /**
- * POLYMORPHISME - un objet peut bÃ©nÃ©ficier de comportements variÃ©s
- * au moment de l'exÃ©cution du programme en utilisant intelligement
+ * POLYMORPHISME - un objet peut bénéficier de comportements variés
+ * au moment de l'exécution du programme en utilisant intelligement
  * la hierarchie des classes dans laquelle elle se trouve.
  * <p>
  * Il y a deux techniques pour atteindre le polymorphisme :
- * 1- l'HÃ‰RITAGE; 
+ * 1- l'HÉRITAGE; 
  * 2- la COMPOSITION.
  * <p>
- * HÃ‰RITAGE - L'hÃ©ritage en programmation est comme l'hÃ©ritage chez les 
- * Ãªtres vivants: il y a un arbre gÃ©nÃ©ologique avec des parents et des 
+ * HÉRITAGE - L'héritage en programmation est comme l'héritage chez les 
+ * êtres vivants: il y a un arbre généologique avec des parents et des 
  * enfants. Sauf, en programmation Java, chaque classe peut seulement 
- * avoir UN parent, ce qu'on appelle la "classe mÃ¨re". Les enfants s'appellent 
+ * avoir UN parent, ce qu'on appelle la "classe mère". Les enfants s'appellent 
  * les "classes filles".
  * <p>
- * On dit Ã  Java qu'une classe hÃ©rite d'une autre avec le mot-clÃ© {@code extends}
- * aprÃ¨s le nom de la classe dans sa signature. Par exemple :
+ * On dit à Java qu'une classe hérite d'une autre avec le mot-clé {@code extends}
+ * après le nom de la classe dans sa signature. Par exemple :
  * <p>
  * <code> public class Bird extends Animal {}</code>
  * <p>
- * Les classes filles incluent tous les champs et toutes les mÃ©thodes de la
- * classe mÃ¨re. Les classes filles peuvent s'en servir directement ou 
- * inclure une nouvelle dÃ©claration pour ces mÃ©thodes (ce qui s'appelle un
- * Override). La dÃ©finition dans la classe fille sera toujours utilisÃ©e si
- * elle est prÃ©sente, sinon on ira trouver la dÃ©finition dans la classe mÃ¨re.
+ * Les classes filles incluent tous les champs et toutes les méthodes de la
+ * classe mère. Les classes filles peuvent s'en servir directement ou 
+ * inclure une nouvelle déclaration pour ces méthodes (ce qui s'appelle un
+ * Override). La définition dans la classe fille sera toujours utilisée si
+ * elle est présente, sinon on ira trouver la définition dans la classe mère.
  * <p>
- * Les classes filles peuvent aussi dÃ©finir d'autres champs et mÃ©thodes qui
- * ne sont pas dans la classe mÃ¨re, mais c'est gÃ©nÃ©ralement dÃ©conseillÃ©. On
+ * Les classes filles peuvent aussi définir d'autres champs et méthodes qui
+ * ne sont pas dans la classe mère, mais c'est généralement déconseillé. On
  * verra pourquoi dans quelques exemples.
  * <p>
  * COMPOSITION - la composition est lorsqu'une classe inclut dans ses champs
- * une INTERFACE qui peut avoir plusieurs implÃ©mentations diffÃ©rentes. Une
- * classe qui bÃ©nÃ©ficie de la composition n'a rien de diffÃ©rent Ã  dÃ©clarer
+ * une INTERFACE qui peut avoir plusieurs implémentations différentes. Une
+ * classe qui bénéficie de la composition n'a rien de différent à déclarer
  * dans sa signature. Tout le travail d'ajouter un comportement polymorphique
- * vient dans la dÃ©claration de l'interface et des classes qui l'implÃ©mentent.
+ * vient dans la déclaration de l'interface et des classes qui l'implémentent.
  * <p>
- * On dÃ©clare une INTERFACE avec la signature :
+ * On déclare une INTERFACE avec la signature :
  * <p>
  * <code> public interface MyInterface {}</code>
  * <p>
- * Le corps d'une interface est simplement une liste de signatures de mÃ©thodes
- * vides comme {@code void crier();}. Noter le {@code ;} Ã  la fin de la ligne. Une
- * interface est UN CONTRAT -> toutes les classes qui implÃ©mentent une interface
- * DOIVENT Ã©crire un corps pour chaque mÃ©thode annoncÃ©e dans l'interface. C'est
- * comme Ã§a qu'on atteint des comportements diffÃ©rents en incluant une seule
- * interface dans notre classe : on appelle toujours la mÃªme mÃ©thode, mais l'action
- * qui se produit dÃ©pend de la classe qui a implÃ©mentÃ© l'interface.
+ * Le corps d'une interface est simplement une liste de signatures de méthodes
+ * vides comme {@code void crier();}. Noter le {@code ;} à la fin de la ligne. Une
+ * interface est UN CONTRAT -> toutes les classes qui implémentent une interface
+ * DOIVENT écrire un corps pour chaque méthode annoncée dans l'interface. C'est
+ * comme ça qu'on atteint des comportements différents en incluant une seule
+ * interface dans notre classe : on appelle toujours la même méthode, mais l'action
+ * qui se produit dépend de la classe qui a implémenté l'interface.
  * <p>
  * UN RETOUR SUR LE POLYMORPHISME
  * <p>
- * Dans les deux cas - de l'hÃ©ritage et de la composition - le polymorphisme est
- * Ã©vident lors de la dÃ©claration d'un objet. Pour l'hÃ©ritage, on a une classe
- * mÃ¨re Animal et des classes filles Bird, Dog, Cat. Dans notre application, on
- * dÃ©clare alors nos objets comme ceci :
+ * Dans les deux cas - de l'héritage et de la composition - le polymorphisme est
+ * évident lors de la déclaration d'un objet. Pour l'héritage, on a une classe
+ * mère Animal et des classes filles Bird, Dog, Cat. Dans notre application, on
+ * déclare alors nos objets comme ceci :
  * <p>
  * <code>
  * Bird duck = new Bird();<p>
@@ -62,20 +62,20 @@ package edu.ics4u.poly;
  * Animal[] menagerie = {duck, ruff, whiskers}; // polymorphisme: Bird est un Animal, etc.
  * </code>
  * <p>
- * Pour la composition, dans notre classe Animal, on dÃ©clare un champs qui est l'interface
+ * Pour la composition, dans notre classe Animal, on déclare un champs qui est l'interface
  * FaireUnSon, par exemple:
  * <p>
  * <code> public class Animal { FaireUnSon monSon; }</code>
  * <p>
- * Chaque interface peut Ãªtre implÃ©mentÃ© de diffÃ©rentes faÃ§ons par des classes qui utilisent
- * le mot-clÃ© {@code implements} dans la signature, par exemple :
+ * Chaque interface peut être implémenté de différentes façons par des classes qui utilisent
+ * le mot-clé {@code implements} dans la signature, par exemple :
  * <p>
  * <code> 
  * public class Bark implements FaireUnSon { public void monSon() {System.out.prinln("Woof!");} }
  * </code>
  * <p>
- * Si l'interface FaireUnSon est implÃ©mentÃ© dans des classes Sing, Bark, Meow, on peut alors
- * avoir cette dÃ©claration dans les classes filles Bird, Cat et Dog: 
+ * Si l'interface FaireUnSon est implémenté dans des classes Sing, Bark, Meow, on peut alors
+ * avoir cette déclaration dans les classes filles Bird, Cat et Dog: 
  * <p>
  * <code>
  * public class Bird extends Animal
@@ -107,40 +107,40 @@ public class Polymorphisme
 {
     public static void main(String[] args) 
     {
-        // Voir les classes pour des exemples d'hÃ©ritage ("extends")
+        // Voir les classes pour des exemples d'héritage ("extends")
         // et de composition (inclusion d'une interface comme champ)
-        //Animal unknown = new Animal(); //ne peut pas crÃ©er un objet Ã  partir d'une classe abstraite
+        //Animal unknown = new Animal(); //ne peut pas créer un objet à partir d'une classe abstraite
         Bird tweety = new Bird();
         Cat fluffy = new Cat();
         Dog patches = new Dog();
 
-        // polymorphisme via hÃ©ritage
+        // polymorphisme via héritage
         //      Bird, Cat et Dog sont aussi de type Animal
         //      car ils sont des classes filles de la classe Animal
         Animal[] menagerie = {tweety, fluffy, patches};
 
         // polymorphisme via composition
-        //      On n'a pas Ã©crit de code qui change le comportement
-        //      de chaque animal. On a simplement dÃ©clarÃ© une implÃ©mentation
-        //      d'interface diffÃ©rente pour son champ "son"
+        //      On n'a pas écrit de code qui change le comportement
+        //      de chaque animal. On a simplement déclaré une implémentation
+        //      d'interface différente pour son champ "son"
         for (Animal a : menagerie) a.son.monSon();
 
         /* 
-        La composition est super utile, car le comportement n'est pas cachÃ© dans
-        une classe mais bien accessible Ã  toutes les classes et c'est facile
-        d'Ã©crire une nouvelle implÃ©mentation de l'interface si on veut ajouter
+        La composition est super utile, car le comportement n'est pas caché dans
+        une classe mais bien accessible à toutes les classes et c'est facile
+        d'écrire une nouvelle implémentation de l'interface si on veut ajouter
         des nouveaux comportements.
         */
 
         /*
-        La faÃ§on que les classes ont Ã©tÃ© crÃ©es - avec les comportements implÃ©mentÃ©s
-        via des interfaces - suit une structure de dÃ©veloppement de projets
-        orientÃ©s objet qui s'appelle le STRATEGY PATTERN oÃ¹ chaque interface est
-        une des "stratÃ©gies" que les classes utilisent selon leur besoin spÃ©cifique
-        en choissisant l'implÃ©mentation appropriÃ©e.
+        La façon que les classes ont été crées - avec les comportements implémentés
+        via des interfaces - suit une structure de développement de projets
+        orientés objet qui s'appelle le STRATEGY PATTERN où chaque interface est
+        une des "stratégies" que les classes utilisent selon leur besoin spécifique
+        en choissisant l'implémentation appropriée.
 
-        Se rappeler que les stratÃ©gies (interfaces) sont implÃ©mentÃ©es dans des 
-        CLASSES avec le mot-clÃ© `implements`.
+        Se rappeler que les stratégies (interfaces) sont implémentées dans des 
+        CLASSES avec le mot-clé `implements`.
         */
     }
 }

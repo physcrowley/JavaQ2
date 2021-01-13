@@ -1,19 +1,19 @@
 /* Un commentaire de bloc
 
-EN-TÃŠTE : petite description
+EN-TÊTE : petite description
 
 Par : David Crowley, crowlda@ecolecatholique.ca
 */
 
-/** Un commentaire de documentation : les classes, les mÃ©thodes, les attributs
+/** Un commentaire de documentation : les classes, les méthodes, les attributs
  * <p>  
- * Classe qui a le mÃªme nom que le fichier. Les classes commencentent avec des majuscules */
+ * Classe qui a le même nom que le fichier. Les classes commencentent avec des majuscules */
 class Structure
 {
-    /** Tout programme doit avoir une mÃ©thode main
+    /** Tout programme doit avoir une méthode main
      * <p>
-     * C'est le point d'entrÃ©e pour le programme. Java le cherche spÃ©cifiquement
-     * @param args - des options de la ligne de commande - pas utilisÃ© ici
+     * C'est le point d'entrée pour le programme. Java le cherche spécifiquement
+     * @param args - des options de la ligne de commande - pas utilisé ici
      */
     public static void main(String[] args)
     {

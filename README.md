@@ -9,7 +9,7 @@ Les fichiers Java ont été encodés en **Windows 1252** afin de faciliter l'aff
 Type de fichier | Encodage
 --- | ---
 `.java` | Windows 1252
-tous les autres | UTF8
+tous les autres | UTF-8
 
 ## Dossiers `src` et `bin`
 

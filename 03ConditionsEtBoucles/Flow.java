@@ -1,6 +1,6 @@
 /**
- * Exemples pour montrer comment gÃ©rer les dÃ©clarations qui seront exÃ©cutÃ©es
- * durant l'exÃ©cution du programme, notamment un utilisant :
+ * Exemples pour montrer comment gérer les déclarations qui seront exécutées
+ * durant l'exécution du programme, notamment un utilisant :
  * > les conditions et 
  * > les boucles
  * 
@@ -11,10 +11,10 @@ class Flow
 {
     public static void main(String[] args) 
     {
-        //----------OPÃ‰RATEURS----------//
+        //----------OPÉRATEURS----------//
         
         /*
-        MathÃ©matiques : + - / * , fonctions de la class Math
+        Mathématiques : + - / * , fonctions de la class Math
 
         Comparaison : > < >= <= == !=
 
@@ -25,7 +25,7 @@ class Flow
 
         //----------CONDITIONS---------//
         /*
-        if, else if, else --> USAGE : gÃ©nÃ©rale
+        if, else if, else --> USAGE : générale
 
         switch-case --> USAGE : comparer avec une liste de choix fixe
 
@@ -33,13 +33,13 @@ class Flow
 
         /* STRUCTURE if / else if / else
 
-        <mot-clÃ©> (<condition entre parenthÃ¨ses>)
+        <mot-clé> (<condition entre parenthèses>)
         {
-            <dÃ©clarations si la condition est true>;
+            <déclarations si la condition est true>;
         }
         else
         {
-            <dÃ©claration si aucune autre condition n'est true>;
+            <déclaration si aucune autre condition n'est true>;
         }
         */
 
@@ -47,7 +47,7 @@ class Flow
         int B = 3;
         if (A == B)
         {
-            System.out.println("A est Ã©gale Ã  B");
+            System.out.println("A est égale à B");
         } 
         else if (A < B)
         {
@@ -62,15 +62,15 @@ class Flow
 
         switch (<variable>)
         {
-            case <valeur1> : <dÃ©clarations si la variable est Ã©gale Ã  valeur 1>;
-            case <valeur2> : <dÃ©clarations si la variable est Ã©gale Ã  valeur 2>;
-            default : <dÃ©clarations si la variable ne correspond Ã  aucun cas>;
+            case <valeur1> : <déclarations si la variable est égale à valeur 1>;
+            case <valeur2> : <déclarations si la variable est égale à valeur 2>;
+            default : <déclarations si la variable ne correspond à aucun cas>;
         }
 
-        ATTENTION! Le premier cas qui est true est le POINT D'ENTRÃ‰E pour l'exÃ©cution.
-        Toutes les dÃ©clarations qui suivent le 1e cas true seront exÃ©cutÃ©es.
+        ATTENTION! Le premier cas qui est true est le POINT D'ENTRÉE pour l'exécution.
+        Toutes les déclarations qui suivent le 1e cas true seront exécutées.
 
-        Si on veut changer ce comportement, il faut inclure une dÃ©claration "break;" Ã  la
+        Si on veut changer ce comportement, il faut inclure une déclaration "break;" à la
         fin de chaque cas.
 
         */
@@ -86,7 +86,7 @@ class Flow
                 break;
             case "bleu": 
             case "mauve":
-                System.out.println("une couleur haute frÃ©quence");
+                System.out.println("une couleur haute fréquence");
                 break;
             default: 
                 System.out.println("ta couleur n'est pas dans la liste");
@@ -98,17 +98,17 @@ class Flow
         //--------------BOUCLES---------------//
 
         /*
-        for --> USAGE : gÃ©nÃ©rale quand on connaÃ®t la quantitÃ© de rÃ©pÃ©titions
+        for --> USAGE : générale quand on connaît la quantité de répétitions
 
-        "for each" --> USAGE : pour lire les structures de donnÃ©es comme les tableaux et les listes
+        "for each" --> USAGE : pour lire les structures de données comme les tableaux et les listes
 
-        while --> USAGE : rÃ©pÃ©tition gÃ©nÃ©rale (fin inconnue)
+        while --> USAGE : répétition générale (fin inconnue)
         
         */
 
         /* STRUCTURE  for
         
-        for (int i = <dÃ©but>; <condition de fin>; <opÃ©ration pour changer i>) {}
+        for (int i = <début>; <condition de fin>; <opération pour changer i>) {}
 
         Exemples:
             for (int i = 0; i < 2000; i++) {} --> i++ veut dire i = i + 1
@@ -133,22 +133,22 @@ class Flow
 
         /* STRUCTURE "for each"
         
-        for (<type des Ã©lÃ©ments dans le tableau> <variable qui reprÃ©sente un Ã©lÃ©ment> : <tableau>) {}
+        for (<type des éléments dans le tableau> <variable qui représente un élément> : <tableau>) {}
 
         Exemples:
-            int[] nums --> les crochets [] aprÃ¨s le type indique que c'est un tableau ("array") de ce type
+            int[] nums --> les crochets [] après le type indique que c'est un tableau ("array") de ce type
             for (int n : nums)
 
             String[] args
             for (String a : args)
 
-        ATTENTION! on peut seulement observer les Ã©lÃ©ments : les afficher ou utiliser leurs valeurs
+        ATTENTION! on peut seulement observer les éléments : les afficher ou utiliser leurs valeurs
         pour faire un calcul. On ne peut pas modifier les valeurs avec ce type de boucle. Pour modifier
         les valeurs, utiliser une boucle for avec la structure suivante :
 
         for (int i = 0; i < <tableau>.length; i++)
         {
-            // accÃ©der aux Ã©lÃ©ments avec <tableau>[i]
+            // accéder aux éléments avec <tableau>[i]
         }
 
         */
@@ -168,21 +168,21 @@ class Flow
 
         while (<condition>)
         {
-            <dÃ©clarations Ã  rÃ©pÃ©ter tant que la condition reste true>;
+            <déclarations à répéter tant que la condition reste true>;
         }
 
-        ATTENTION! C'est facile de crÃ©er des boucles while infinies si on ne fournit
-        pas un moyen de changer la valeur de la variable utilisÃ©e dans la condition
-        ou, alternativement, une dÃ©claration "break;" dans une condition Ã  l'intÃ©rieur 
+        ATTENTION! C'est facile de créer des boucles while infinies si on ne fournit
+        pas un moyen de changer la valeur de la variable utilisée dans la condition
+        ou, alternativement, une déclaration "break;" dans une condition à l'intérieur 
         de la boucle.
 
         */
         double test = 0.0;
 
-        // afficher tous les nombres jusqu'Ã  temps d'en avoir un >= 0.8
+        // afficher tous les nombres jusqu'à temps d'en avoir un >= 0.8
         while (test < 0.8)
         {
-            test = Math.random(); // gÃ©nerer un nombre alÃ©atoire (entre 0.0 et 1.0)
+            test = Math.random(); // génerer un nombre aléatoire (entre 0.0 et 1.0)
             System.out.print(test + ", ");
         }
         System.out.println();

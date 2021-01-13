@@ -1,6 +1,6 @@
 package edu.ics4u.poly;
 
 public interface FaireUnSon {
-    // liste de mÃ©thodes qui doivent Ãªtre implÃ©mentÃ©es
+    // liste de méthodes qui doivent être implémentées
     public void monSon();
 }
