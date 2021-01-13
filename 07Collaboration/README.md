@@ -63,7 +63,7 @@ Comme prérequis, vous devez:
 
 L'utilisation de GitHub mène à plusieurs versions du même fichier existant en même temps sur différents ordinateurs, donc Git inclut également des `branches`. Le projet est basé sur une branche `main`. Voici la séquence générale pour apporter des modifications à un projet:
 
-1. Chaque fois que vous changez de fichier, vous créez une nouvelle branche à partir de la branche `main`.
+1. Chaque fois que vous changez de fichier, vous créez une nouvelle branche (p.ex. `mon-travail`) à partir de la branche `main`.
 2. Vous effectuez des `commit` **uniquement** sur **vos branches secondaires**, puis vous `push` ces commits sur GitHub.
 3. Sur GitHub, vous créez un `pull request`. C'est l'auteur du `push` qui doit créer cette demande. La demande est pour fusionner les changements dans votre `branch` à la branche `main` et ainsi au projet principal.
 4. Suite au `pull request` nous devons vérifier les conflits avec la version des fichiers sur la branche `main`.
