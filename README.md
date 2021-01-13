@@ -4,7 +4,7 @@ Ce dossier contient tous les exemples et une bonne partie des notes de cours pou
 
 ## Encodage du texte
 
-Les fichiers Java ont été encodés en **Windows 1252** afin de faciliter l'affichage du texte français (unicode) à la ligne de commande. Tous les autres fichiers sont encodés en **UTF8**, le standard international actuel.
+Les fichiers Java ont été encodés en **Windows 1252** afin de faciliter l'affichage du texte français (unicode) à la ligne de commande. Tous les autres fichiers sont encodés en **UTF-8**, le standard international actuel.
 
 Type de fichier | Encodage
 --- | ---
