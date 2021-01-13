@@ -80,15 +80,14 @@ Il faut aussi comprendre un peu sur [Maven](Maven.md), un logiciel spécifiqueme
 
 ## Travailler sur le projet collaboratif
 Le travail individuel sur le projet se fait selon la séquence typique avec Git, soit : 
-* créer une nouvelle branche, 
-* faire des commit sur sa branche, 
-* pousser ses commits, 
-* créer un pull request sur GitHub, 
+1. créer une nouvelle branche, 
+2. faire des `commit` sur sa branche, 
+3. `push` ses commits, 
+4. créer un `pull request` sur GitHub, 
     >IMPORTANT : il faut toujours se rendre sur GitHub pour créer un pull request.
-* S'il n'y a pas de gérant des pull requests, tu devrais faire les étapes 5 à 7 toi-même. Sinon, c'est le gérant qui s'en chargera… et tu peux aller à l'étape 8. 
-* gérer les conflits avec les autres membres de l'équipe, au besoin,
-* fusionner (merge) la branche avec main,
-* supprimer la branche temporaire sur GitHub
-*faire un pull de la branche main sur son poste
-* supprimer la branche temporaire sur son poste.
-* répéter le tout pour la prochaine tâche.
+5. S'il n'y a pas de gérant des pull requests, tu devrais faire les étapes 5 à 7 toi-même. Sinon, c'est le gérant qui s'en chargera… et tu peux aller à l'étape 8. 
+6. gérer les conflits avec les autres membres de l'équipe, au besoin,
+7. fusionner (`merge`) la branche avec `main` et supprimer la branche temporaire sur GitHub
+9. faire un `pull` de la branche `main` sur son poste
+10. supprimer la branche temporaire sur son poste.
+11. répéter le tout pour la prochaine tâche.
