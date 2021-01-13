@@ -67,13 +67,13 @@ L'utilisation de GitHub mène à plusieurs versions du même fichier existant en
 2. Vous effectuez des `commit` **uniquement** sur **vos branches secondaires**, puis vous `push` ces commits sur GitHub.
 3. Sur GitHub, vous créez un `pull request`. C'est l'auteur du `push` qui doit créer cette demande. La demande est pour fusionner les changements dans votre `branch` à la branche `main` et ainsi au projet principal.
 4. Suite au `pull request` nous devons vérifier les conflits avec la version des fichiers sur la branche `main`.
-    * S'il n'y a ** aucun conflit ** avec la branche `main`, nous pouvons `merge` les modifications directement dans la branche `main`. C'est ce qu'on appelle une *fast-forward* avec `main` enchaînant simplement vos commits sur la tête de sa branche et déplaçant l'index actuel du projet vers ton commit le plus récent.
-    * S'il y a ** des conflits **, les collaborateurs doivent aller dans le fichier sur GitHub et éditer les zones en surbrillance afin que le nouveau matériel puisse être intégré sans casser le matériel existant. Il s'agit d'un * processus d'édition manuel *. Lorsque les modifications sont satisfaisantes, les nouvelles modifications, y compris les modifications manuelles, peuvent être fusionnées dans la branche «main».
+    * S'il n'y a **aucun conflit** avec la branche `main`, nous pouvons `merge` les modifications directement dans la branche `main`. C'est ce qu'on appelle une *fast-forward* avec `main` enchaînant simplement vos commits sur la tête de sa branche et déplaçant l'index actuel du projet vers ton commit le plus récent.
+    * S'il y a **des conflits**, les collaborateurs doivent aller dans le fichier sur GitHub et éditer les zones en surbrillance afin que le nouveau matériel puisse être intégré sans casser le matériel existant. Il s'agit d'un *processus d'édition manuel*. Lorsque les modifications sont satisfaisantes, les nouvelles modifications, y compris les modifications manuelles, peuvent être fusionnées dans la branche `main`.
 5. La requête `pull` est alors fermée et votre branche secondaire peut être supprimée.
 
 Ce processus est répété chaque fois qu'un nouveau changement doit être intégré dans le projet.
 
-Voici quelques conseils pour ** éviter les conflits de fusion **:
+Voici quelques conseils pour **éviter les conflits de fusion**:
 
 * Divisez le travail afin qu'une seule personne travaille sur un fichier (ou un sous-ensemble de fichiers) à la fois
 * Utilisez la messagerie, comme les `Issues` de GitHub, pour configurer des listes de tâches et les attribuer à des membres spécifiques de l'équipe. Les autres membres de l'équipe peuvent ensuite commenter chaque `Issue` / tâche au lieu de travailler dans les fichiers s'ils ont besoin de suggérer des modifications.
@@ -87,7 +87,7 @@ Pour un projet créé d'abord dans Eclipse (avec ou sans Maven), vous devrez:
 * Ouvrez la perspective Git: Window > Perspectives > Other > Git
 * Cliquer le symbole `++` pour ajouter l'ensemble des fichiers à la zone "Staged", ajoutez un commentaire de 50 caractères ou moins décrivant le `commit` et cliquez sur `commit`.
 
-> Si la branche par défaut s'appelle `master`, il est maintenant recommandé de la changer en `main` en ouvrant le dossier branches, en faire un clic droit sur la branche `master` et en sélectionnant Rename. <p> Vous devriez faire ceci ** avant ** de faire un `push` vers GitHub (sinon il faudra aussi modifier le nom de la branche sur GitHub, doublant le travail).
+> Si la branche par défaut s'appelle `master`, il est maintenant recommandé de la changer en `main` en ouvrant le dossier branches, en faire un clic droit sur la branche `master` et en sélectionnant Rename. <p> Vous devriez faire ceci **avant** de faire un `push` vers GitHub (sinon il faudra aussi modifier le nom de la branche sur GitHub, doublant le travail).
 
 #### Création d'un nouveau répertoire GitHub pour un projet existant
 
@@ -106,24 +106,24 @@ Pour un projet créé d'abord sur votre ordinateur, vous devrez:
 
 #### Synchronisation des modifications vers et depuis GitHub
 
-Lorsque vous ** ouvrez votre projet ** dans Eclipse, vous devez d'abord:
+Lorsque vous **ouvrez votre projet** dans Eclipse, vous devez d'abord:
 
 * Passez à la branche `main`.
 * Utilisez le menu Team pour faire un `Pull` du projet. S'il y a des problèmes qui provoquent un échec de `pull`, parlez avec vos collaborateurs, ou assurez-vous que vous avez validé votre travail dans votre branche secondaire avant de tenter le `pull`.
 * si le travail de votre branche latérale a été fusionné dans la branche `main`, vous devez maintenant supprimer la branche latérale qui est maintenant désuette.
 
-Pour ** travailler sur le projet **, vous devez:
+Pour **travailler sur le projet**, vous devez:
 
 * créer une nouvelle branche latérale pour le travail que vous vous apprêtez à faire
 * enregistrez votre travail et faites des commits sur cette branche latérale
 
-Lorsque vous avez ** terminé les modifications que vous souhaitez fusionner dans la branche ** `main` ** ** ou que vous êtes simplement ** à la fin de la journée de travail **, vous devez:
+Lorsque vous avez **terminé les modifications que vous souhaitez fusionner dans la branche** `main` ou que vous êtes simplement **à la fin de la journée de travail**, vous devez:
 
 * faire un `commit` final de votre branche latérale
 * `push` votre branche latérale vers GitHub (pour que votre équipe puisse voir où vous en êtes)
 * si les changements sont terminés, accédez à GitHub et créez une `pull request` pour que les nouveaux éléments puissent être ajoutés au projet principal.
 
-Si vous ** gérez la base de code du projet **, vous devez réserver du temps en fin de journée (ou tout au long de la journée, selon les besoins de votre équipe) pour:
+Si vous **gérez la base de code du projet**, vous devez réserver du temps en fin de journée (ou tout au long de la journée, selon les besoins de votre équipe) pour:
 
 * passer en revue les `pull requests` et passez en revue tout conflit de `merge` avec les membres de l'équipe impliqués;
 * fusionner les modifications dans la branche `main` sur GitHub;
