@@ -21,7 +21,7 @@ Lorsque vous utilisez Git :
 * Seuls les *métadonnées* de l'espace de travail nécessaires pour intégrer correctement vos projets dans votre installation locale d'Eclipse seront stockées dans le dossier `workspace`.
 * Tous les projets *locaux* (qui ne sont pas partagés via GitHub) doivent également être stockés *entièrement* dans le dossier `workspace` (métadonnées et code source).
 
-## Prérequis
+## ✅ Prérequis
 
 Il faut comprendre un peu sur [Git et GitHub](Git.md) avant de commencer à collaborer.
 
