@@ -28,7 +28,65 @@ Consultez les didacticiels vidéo suivants pour l'installation de ces deux logic
 
 ## Le "Document Object Model" et le graphe de scène
 
->Info à venir
+Le *document object model* ou DOM est un terme qui vient du javascript pour décrire la structure des éléments sur un site Web. L'équivalent dans une application JavaFX s'appelle le *graphe de scène*. Dans les deux cas, le DOM et le graphe, on décrit la relation entre des objets *parents* et des objets *enfants*.
+
+La base du graphe de scène en JavaFX est toujours pareil parce qu'il y a deux objets spéciaux qui doivent se trouver dans chaque application JavaFX : un `Stage` et une `Scene`.
+
+* le `Stage` représente la **fenêtre de l'application**. C'est un champ hérité de `javafx.application.Application` et passé comme argument à la méthode `start()`. Le type de fenêtre est déterminé en arrière-plan tenant compte du système d'exploitation.
+* la `Scene` qui représente **l'objet de fond** de la fenêtre. C'est un **contenant** pour les objets visibles et actifs de l'application.
+
+Pour lancer une fenêtre d'application, il faut placer *exactement 1* scène sur le stage. Chaque scène peut soit être *vide* ou avoir *exactement 1* objet à la racine, son objet `Root`.
+
+Les objets `Root` sont des contenants avec des façons différentes d'organiser les objets qui y seront ajoutés : en tas (`StackPane`), comme ruban horizontal (`HBox`), comme ruban vertical (`VBox`), comme matrice (`GridPane`), etc.
+
+Les objets qu'on place dans l'objet `Root` s'appellent des `Node`, comme par exemple une étiquette (`Label`), un bouton (`Button`) ou un champ de texte(`TextBox`). Si l'objet le permet, on peut placer d'autres `Node` dans ces `Node`. Par exemple, l'objet `Root` peut être un `VBox` qui contient un `Label` et un `Hbox` puis le `Hbox` peut contenir un `TextBox` et un `Button`.
+
+>Vous pouvez trouver une liste des ces différents objets dans la documentation de JavaFX
+
+Ainsi, après le `Stage` et la `Scene`, la structure de l'application est déterminé par les choix du développeur. Le graphe de scène aura une arborescence qui reflète ces choix. Voici le graphe de scène pour l'exemple précédent :
+
+```
+Stage
+|
+Scene
+|
+Vbox (Root)
+|
+|---Label (Node)
+|
+`---HBox (Node)
+    |
+    |---TextBox (Node)
+    |
+    `---Button (Node)
+```
+
+Dans un programme JavaFX *simple* -> où le graphe de scène est définie dans la `class` qui `extends Application`, on peut obtenir de l'information sur les relations de parenté d'un `Node` spécifique en utilisant les méthodes `.getChildren()` et `.getParent()`. Pour notre exemple, présumons les noms de variables suivants pour les objets :
+
+```java
+var label = new Label();
+var hbox = new HBox();
+var text = new TextBox();
+var button = new Button();
+```
+
+on pourra sonder quelques-un comme suit :
+
+```java
+label.getParent(); // null (aucun `Node` plus haut... le VBox est le `Root`)
+hbox.getChildren(); // retourne TextBox et Button
+text.getParent(); // retourne HBox
+```
+
+Pour établir la scène et le stage, on utiliserait les commandes suivantes dans le code (ou vous pouvez repérer des commandes semblables dans les modèles de projet JavaFX), présumant que le `Stage` passé dans la méthode `start()` s'appelle `stage` :
+
+```java
+var height = 600;
+var width = 800;
+
+var scene = new Scene(vbox, width, height); // `vbox` est spécifié comme le `Root`
+stage.setScene(scene); // `scene` est spécifié comme la scène de la fenêtre `stage`
+```
 
 ## Les contrôles et les expressions lambda en Java
 
