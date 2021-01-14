@@ -32,8 +32,8 @@ Le *document object model* ou DOM est un terme qui vient du javascript pour déc
 
 La base du graphe de scène en JavaFX est toujours pareil parce qu'il y a deux objets spéciaux qui doivent se trouver dans chaque application JavaFX : un `Stage` et une `Scene`.
 
-* le `Stage` représente la **fenêtre de l'application**. C'est un champ hérité de `javafx.application.Application` et passé comme argument à la méthode `start()`. Le type de fenêtre est déterminé en arrière-plan tenant compte du système d'exploitation.
-* la `Scene` qui représente **l'objet de fond** de la fenêtre. C'est un **contenant** pour les objets visibles et actifs de l'application.
+* Le `Stage` représente la **fenêtre de l'application**. C'est un champ hérité de `javafx.application.Application` et passé comme argument à la méthode `start()`. Le type de fenêtre est déterminé en arrière-plan tenant compte du système d'exploitation.
+* La `Scene` représente **l'objet de fond** de la fenêtre. C'est un **contenant** pour les objets visibles et actifs de l'application.
 
 Pour lancer une fenêtre d'application, il faut placer *exactement 1* scène sur le stage. Chaque scène peut soit être *vide* ou avoir *exactement 1* objet à la racine, son objet `Root`.
 
@@ -64,13 +64,18 @@ Vbox (Root)
 Dans un programme JavaFX *simple* -> où le graphe de scène est définie dans la `class` qui `extends Application`, on peut obtenir de l'information sur les relations de parenté d'un `Node` spécifique en utilisant les méthodes `.getChildren()` et `.getParent()`. Pour notre exemple, présumons les noms de variables suivants pour les objets :
 
 ```java
-var label = new Label();
-var hbox = new HBox();
+// les `Nodes`
 var text = new TextBox();
 var button = new Button();
+var hbox = new HBox(text, button);
+var label = new Label();
+// le `Root`
+var vbox = new VBox(label, hbox); 
 ```
 
-on pourra sonder quelques-un comme suit :
+>Noter qu'il faut déclarer les objets les plus bas dans l'arboresence en premier afin de composer les objet plus haut.
+
+On pourra sonder les liens de parenté de quelques-un comme suit :
 
 ```java
 label.getParent(); // null (aucun `Node` plus haut... le VBox est le `Root`)
