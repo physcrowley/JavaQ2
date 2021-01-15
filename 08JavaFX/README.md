@@ -65,7 +65,7 @@ Dans un programme JavaFX *simple* -> où le graphe de scène est définie dans l
 
 ```java
 // les `Nodes`
-var text = new TextBox();
+var text = new TextField();
 var button = new Button();
 var hbox = new HBox(text, button);
 var label = new Label();
