@@ -39,7 +39,7 @@ Pour lancer une fenêtre d'application, il faut placer *exactement 1* scène sur
 
 Les objets `Root` sont des contenants avec des façons différentes d'organiser les objets qui y seront ajoutés : en tas (`StackPane`), comme ruban horizontal (`HBox`), comme ruban vertical (`VBox`), comme matrice (`GridPane`), etc.
 
-Les objets qu'on place dans l'objet `Root` s'appellent des `Node`, comme par exemple une étiquette (`Label`), un bouton (`Button`) ou un champ de texte(`TextBox`). Si l'objet le permet, on peut placer d'autres `Node` dans ces `Node`. Par exemple, l'objet `Root` peut être un `VBox` qui contient un `Label` et un `Hbox` puis le `Hbox` peut contenir un `TextBox` et un `Button`.
+Les objets qu'on place dans l'objet `Root` s'appellent des `Node`, comme par exemple une étiquette (`Label`), un bouton (`Button`) ou un champ de texte(`TextBox`). Si l'objet le permet, on peut placer d'autres `Node` dans ces `Node`. Par exemple, l'objet `Root` peut être un `VBox` qui contient un `Label` et un `Hbox` puis le `Hbox` peut contenir un `TextField` et un `Button`.
 
 >Vous pouvez trouver une liste des ces différents objets dans la documentation de JavaFX
 
@@ -56,7 +56,7 @@ Vbox (Root)
 |
 `---HBox (Node)
     |
-    |---TextBox (Node)
+    |---TextField (Node)
     |
     `---Button (Node)
 ```
