@@ -10,19 +10,26 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
- * JavaFX App
+ * JavaFX App pour montrer comment utiliser les contrôles avec les expressions lambda
  */
 public class App extends Application {
 
     @Override
     public void start(Stage stage) {
 
-        var button = new Button();
-        var text = new TextField();
-        var hbox = new HBox(text, button);
+        // ------CONTRÔLES-------
         var label = new Label("Voici un exemple avec un champ de texte et un bouton.");
-        var vbox = new VBox(label, hbox);
-        var scene = new Scene(vbox, 640, 480);
+        var text = new TextField(); // un contrôle
+        var button = new Button(); // un autre contrôle
+        // TODO écrire des étiquettes pour nos contrôles
+        // TODO écrire l'action pour le bouton
+        
+        // ----------MISE EN PAGE------
+        var hbox = new HBox(text, button);
+        var root = new VBox(label, hbox); // ou: var root = new VBox(); root.getChildren().addAll(label, hbox);
+
+        // ----------MISE EN SCÈNE---------
+        var scene = new Scene(root, 600, 200); 
         stage.setScene(scene);
         stage.show();
     }
