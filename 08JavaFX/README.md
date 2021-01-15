@@ -93,6 +93,12 @@ var scene = new Scene(vbox, width, height); // `vbox` est spécifié comme le `R
 stage.setScene(scene); // `scene` est spécifié comme la scène de la fenêtre `stage`
 ```
 
+### Ressources pour apprendre d'avantage sur les objets JavaFX
+
+* [Tutorials Point JavaFX](https://www.tutorialspoint.com/javafx/index.htm) - complet
+* [Javapedia](https://javafxpedia.com/) - touche des sujets considérant que tu connais déjà un peu le développement logiciel
+* [Tutoriel Youtube](https://www.youtube.com/playlist?list=PLS1QulWo1RIaUGP446_pWLgTZPiFizEMq) - ignorer 1 et 2 (on le fait différemment avec Maven); 3 à 7 sont essentiels; les autres sont utiles selon ton intérêt
+
 ## Les contrôles et les expressions lambda en Java
 
 >Info à venir
