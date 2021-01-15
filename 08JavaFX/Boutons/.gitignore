@@ -1,0 +1,10 @@
+# output files
+/target/
+/bin/
+*.class
+*.jar
+
+# configuration files
+.settings
+.classpath
+.project
