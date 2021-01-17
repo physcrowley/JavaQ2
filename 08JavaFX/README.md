@@ -125,7 +125,7 @@ Passons à travers chaque élément :
 
 * anonyme : on ne donne pas de nom à la fonction qu'on décrit (parce que le nom de cette fonction est déjà définie ailleurs, dans l'interface)
 * `()` : les paramètres, d'aucun à plusieurs, comme pour une fonction normale, mais on n'inclut pas les types des paramètres (parce que les types sont aussi définis dans l'interface)
-* `{}` : une ou plusieurs commandes Java qui peuvent retourner ou non une valeur... elles si devraient être simples (pas de nouvelles variables, ni de conditions, ni de boucles)
+* `{}` : une ou plusieurs commandes Java qui peuvent retourner ou non une valeur... elles devraient être simples (pas de nouvelles variables, ni de conditions, ni de boucles)
 * opérateur `->` : indique que c'est une expression lambda est donc de prendre le(s) paramètre(s) à la gauche pour les commandes à la droite.
 
 ### Utilisation
@@ -173,7 +173,7 @@ Dans les deux versions, le résultat est le même, mais c'est *beaucoup plus tra
 
 Plus généralement, les expressions lambda sont utilisées avec les méthodes `.forEach` des collections comme des `List` ou des `Map` et avec les méthodes `.filter` et `.map` qu'on peut utiliser sur un `Stream` de ces collections.
 
-### Quelques tutoriels pour les interfaces
+### Quelques tutoriels pour les expressions lambda
 
 * [Oracle - explications de fond avec exemple JavaFX](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#lambda-expressions-in-gui-applications)
 * [W3 Schools - tutoriel rapide pour l'usage général](https://www.w3schools.com/java/java_lambda.asp)
