@@ -77,7 +77,7 @@ var vbox = new VBox(label, hbox);  // label et hbox sont enfants de vbox
 
 >Noter qu'il faut déclarer les objets les plus bas dans l'arboresence en premier afin de composer les objet plus près de la racine.
 
-Parce que le graphe de scène est hiérarchique, on peut aussi déclarer les `Node` qui sont composé d'autres `Node` plus explicitement avec la chaîne de méthodes `.getChildren().add()` ou `.getChildren().addAll()`. La méthode `getChildren()` retourne la liste des enfants et les méthodes `add()` et `addAll()` ajoute des éléments à cette liste. Par exemple :
+Parce que le graphe de scène est hiérarchique, on peut aussi déclarer les `Node` ou le `Root` qui sont composé d'autres `Node` plus explicitement avec la chaîne de méthodes `.getChildren().add()` ou `.getChildren().addAll()`. La méthode `getChildren()` retourne la liste des enfants et les méthodes `add()` et `addAll()` ajoute des éléments à cette liste. Par exemple :
 
 ```java
 var hbox = new HBox();
@@ -87,7 +87,7 @@ hbox.getChildren().addAll(text, button);
 Finalement, on peut sonder les liens de parenté des `Node`. Par exemple :
 
 ```java
-label.getParent(); // null (aucun `Node` plus haut... le VBox est le `Root`)
+label.getParent(); // null (aucun `Node` plus haut... le VBox est un `Root`)
 hbox.getChildren(); // retourne la liste contenant les `Node` TextBox et Button
 text.getParent(); // retourne le `Node` HBox
 ```
