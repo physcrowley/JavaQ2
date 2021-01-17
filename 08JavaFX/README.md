@@ -101,7 +101,7 @@ stage.setScene(scene); // `scene` est spécifié comme la scène de la fenêtre 
 
 ## Les contrôles et les expressions lambda en Java
 
->Info à venir
+* [W3 Schools](https://www.w3schools.com/java/java_lambda.asp)
 
 ## Définir les styles avec le CSS
 
