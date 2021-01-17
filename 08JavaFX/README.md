@@ -28,7 +28,7 @@ Consultez les didacticiels vidéo suivants pour l'installation de ces deux logic
 
 ## Le "Document Object Model" et le graphe de scène
 
-Le *document object model* ou DOM est un terme qui vient du javascript pour décrire la structure des éléments sur un site Web. L'équivalent dans une application JavaFX s'appelle le *graphe de scène*. Dans les deux cas, le DOM et le graphe, on décrit la relation entre des objets *parents* et des objets *enfants*.
+Le **document object model** ou DOM est un terme qui vient du *javascript* pour décrire la structure des éléments sur un site Web. L'équivalent dans une application *JavaFX* s'appelle le **graphe de scène**. Dans les deux cas, le DOM et le graphe, on décrit la relation entre des objets *parents* et des objets *enfants*.
 
 La base du graphe de scène en JavaFX est toujours pareil parce qu'il y a deux objets spéciaux qui doivent se trouver dans chaque application JavaFX : un `Stage` et une `Scene`.
 
@@ -61,26 +61,35 @@ Vbox (Root)
     `---Button (Node)
 ```
 
-Dans un programme JavaFX *simple* -> où le graphe de scène est définie dans la `class` qui `extends Application`, on peut obtenir de l'information sur les relations de parenté d'un `Node` spécifique en utilisant les méthodes `.getChildren()` et `.getParent()`. Pour notre exemple, présumons les noms de variables suivants pour les objets :
+Dans un programme JavaFX *simple* -> où le graphe de scène est définie dans la `class` qui `extends Application`, on peut obtenir de l'information sur les relations de parenté d'un `Node` spécifique en utilisant les méthodes `.getChildren()` et `.getParent()`.
+
+On peut produire le graphe de scène directement dans la méthode `start()` de notre application JavaFX avec les commandes suivantes :
 
 ```java
 // les `Nodes`
 var text = new TextField();
 var button = new Button();
-var hbox = new HBox(text, button);
+var hbox = new HBox(text, button); // text et button sont enfants de hbox
 var label = new Label();
 // le `Root`
-var vbox = new VBox(label, hbox); 
+var vbox = new VBox(label, hbox);  // label et hbox sont enfants de vbox
 ```
 
->Noter qu'il faut déclarer les objets les plus bas dans l'arboresence en premier afin de composer les objet plus haut.
+>Noter qu'il faut déclarer les objets les plus bas dans l'arboresence en premier afin de composer les objet plus près de la racine.
 
-On pourra sonder les liens de parenté de quelques-un comme suit :
+Parce que le graphe de scène est hiérarchique, on peut aussi déclarer les `Node` qui sont composé d'autres `Node` plus explicitement avec la chaîne de méthodes `.getChildren().add()` ou `.getChildren().addAll()`. La méthode `getChildren()` retourne la liste des enfants et les méthodes `add()` et `addAll()` ajoute des éléments à cette liste. Par exemple :
+
+```java
+var hbox = new HBox();
+hbox.getChildren().addAll(text, button);
+```
+
+Finalement, on peut sonder les liens de parenté des `Node`. Par exemple :
 
 ```java
 label.getParent(); // null (aucun `Node` plus haut... le VBox est le `Root`)
-hbox.getChildren(); // retourne TextBox et Button
-text.getParent(); // retourne HBox
+hbox.getChildren(); // retourne la liste contenant les `Node` TextBox et Button
+text.getParent(); // retourne le `Node` HBox
 ```
 
 Pour établir la scène et le stage, on utiliserait les commandes suivantes dans le code (ou vous pouvez repérer des commandes semblables dans les modèles de projet JavaFX), présumant que le `Stage` passé dans la méthode `start()` s'appelle `stage` :
@@ -142,8 +151,6 @@ button.setOnAction(
             
             @Override
             // implémentation de la méthode `handle` de l'interface
-            // remarquer que `handle` prend un paramètre de type
-            //    `ActionEvent` qu'on a nommé `e`
             public void handle(ActionEvent e) {
                 System.out.println("Hello World!");
             }
@@ -160,11 +167,11 @@ var button = new Button();
 button.setOnAction( e -> System.out.println("Hello World!") );
 ```
 
-Dans les deux versions, le résultat est le même, mais c'est *beaucoup plus transparent et lisible* avec l'expression lambda. Dans les deux cas, le paramètre `e` représente l'événement (p.ex. un clic). On peut lire l'expression lambda `e -> System.out.println("Hello World!")` comme 'Prend l'événement et fait ceci avec : affiche "Hello World!" à la console'.
+Dans les deux versions, le résultat est le même, mais c'est *beaucoup plus transparent et lisible* avec l'expression lambda. Dans les deux cas, le paramètre `ActionEvent e` représente l'événement (p.ex. un clic). On peut lire l'expression lambda `e -> System.out.println("Hello World!")` comme 'Prend l'événement et fait ceci avec : affiche "Hello World!" à la console'.
 
 #### En général
 
-Plus généralement, les expressions lambda sont souvent utilisées avec les méthodes `.forEach`  des collections comme des `List` ou des `Map` et avec les méthodes `.filter` et `.map` qu'on peut utiliser sur un `Stream` de ces collections.
+Plus généralement, les expressions lambda sont utilisées avec les méthodes `.forEach` des collections comme des `List` ou des `Map` et avec les méthodes `.filter` et `.map` qu'on peut utiliser sur un `Stream` de ces collections.
 
 ### Quelques tutoriels pour les interfaces
 
