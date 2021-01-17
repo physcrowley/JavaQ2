@@ -101,9 +101,7 @@ Vbox (Root)
     `---Button (Node)
 ```
 
-Dans un programme JavaFX *simple* -> où le graphe de scène est définie dans la `class` qui `extends Application`, on peut obtenir de l'information sur les relations de parenté d'un `Node` spécifique en utilisant les méthodes `.getChildren()` et `.getParent()`.
-
-On peut produire le graphe de scène directement dans la méthode `start()` de notre application JavaFX avec les commandes suivantes :
+Dans un programme JavaFX *simple*, on peut produire ce graphe de scène directement dans la méthode `start()` de notre application JavaFX avec les commandes suivantes :
 
 ```java
 // les `Nodes`
@@ -124,7 +122,7 @@ var hbox = new HBox();
 hbox.getChildren().addAll(text, button);
 ```
 
-Finalement, on peut sonder les liens de parenté des `Node`. Par exemple :
+On peut aussi obtenir de l'information sur les relations de parenté d'un `Node` spécifique en utilisant les méthodes `.getChildren()` et `.getParent()`. Par exemple :
 
 ```java
 label.getParent(); // null (aucun `Node` plus haut... le VBox est un `Root`)
@@ -132,7 +130,7 @@ hbox.getChildren(); // retourne la liste contenant les `Node` TextBox et Button
 text.getParent(); // retourne le `Node` HBox
 ```
 
-Pour établir la scène et le stage, on utiliserait les commandes suivantes dans le code (ou vous pouvez repérer des commandes semblables dans les modèles de projet JavaFX), présumant que le `Stage` passé dans la méthode `start()` s'appelle `stage` :
+Finalement, pour établir la scène et le stage, on utiliserait les commandes suivantes dans le code (ou vous pouvez repérer des commandes semblables dans les modèles de projet JavaFX), présumant que le `Stage` passé dans la méthode `start()` s'appelle `stage` :
 
 ```java
 var height = 600;
