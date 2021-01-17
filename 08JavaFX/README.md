@@ -109,7 +109,7 @@ stage.setScene(scene); // `scene` est spécifié comme la scène de la fenêtre 
 * [Tutorials Point JavaFX](https://www.tutorialspoint.com/javafx/index.htm)
   * complet, détaillé, profond
 * [Javapedia](https://javafxpedia.com/)
-  * couvre des stratégies de développement logiciel, présumant une certaine expérience en développement
+  * couvre des stratégies de développement logiciel avec JavaFX, présumant une certaine expérience en développement
 * [Tutoriel Youtube](https://www.youtube.com/playlist?list=PLS1QulWo1RIaUGP446_pWLgTZPiFizEMq)
   * ignorer 1 et 2 (on le fait différemment avec Maven); 3 à 7 sont essentiels; les autres sont utiles selon ton intérêt
 
