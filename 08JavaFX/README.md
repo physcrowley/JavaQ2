@@ -95,13 +95,18 @@ stage.setScene(scene); // `scene` est spécifié comme la scène de la fenêtre 
 
 ### Ressources pour apprendre d'avantage sur les objets JavaFX
 
-* [Tutorials Point JavaFX](https://www.tutorialspoint.com/javafx/index.htm) - complet
-* [Javapedia](https://javafxpedia.com/) - touche des sujets considérant que tu connais déjà un peu le développement logiciel
-* [Tutoriel Youtube](https://www.youtube.com/playlist?list=PLS1QulWo1RIaUGP446_pWLgTZPiFizEMq) - ignorer 1 et 2 (on le fait différemment avec Maven); 3 à 7 sont essentiels; les autres sont utiles selon ton intérêt
+* [Tutoriel pour débutats](https://coderslegacy.com/java/javafx-tutorial/)
+  * bien structuré avec exemples complets
+* [Tutorials Point JavaFX](https://www.tutorialspoint.com/javafx/index.htm)
+  * complet, détaillé, profond
+* [Javapedia](https://javafxpedia.com/)
+  * couvre des stratégies de développement logiciel, présumant une certaine expérience en développement
+* [Tutoriel Youtube](https://www.youtube.com/playlist?list=PLS1QulWo1RIaUGP446_pWLgTZPiFizEMq)
+  * ignorer 1 et 2 (on le fait différemment avec Maven); 3 à 7 sont essentiels; les autres sont utiles selon ton intérêt
 
 ## Les contrôles et les expressions lambda en Java
 
-Les **expressions lambda** sont utilisées pour écrire une fonction **anonyme** succinctement avec la syntaxe :
+Les **expressions lambda** sont utilisées pour *implémenter succinctement une méthode décrite dans une interface* avec la syntaxe :
 
 ```java
 () -> {}
@@ -109,8 +114,8 @@ Les **expressions lambda** sont utilisées pour écrire une fonction **anonyme**
 
 Passons à travers chaque élément :
 
-* anonyme : on ne donne pas de nom à la fonction qu'on décrit
-* `()` : les paramètres, d'aucun à plusieurs, comme pour une fonction normale, mais on n'inclut pas les types des paramètres
+* anonyme : on ne donne pas de nom à la fonction qu'on décrit (parce que le nom de cette fonction est déjà définie ailleurs, dans l'interface)
+* `()` : les paramètres, d'aucun à plusieurs, comme pour une fonction normale, mais on n'inclut pas les types des paramètres (parce que les types sont aussi définis dans l'interface)
 * `{}` : une ou plusieurs commandes Java qui peuvent retourner ou non une valeur... elles si devraient être simples (pas de nouvelles variables, ni de conditions, ni de boucles)
 * opérateur `->` : indique que c'est une expression lambda est donc de prendre le(s) paramètre(s) à la gauche pour les commandes à la droite.
 
@@ -155,13 +160,13 @@ var button = new Button();
 button.setOnAction( e -> System.out.println("Hello World!") );
 ```
 
-Dans les deux versions, le résultat est le même, mais c'est *beaucoup plus transparent* avec l'expression lambda. Dans les deux cas, le paramètre `e` représente l'événement (p.ex. un clic). On peut lire l'expression lambda `e -> System.out.println("Hello World!")` comme 'Prend l'événement et fait ceci avec : affiche "Hello World!" à la console'.
+Dans les deux versions, le résultat est le même, mais c'est *beaucoup plus transparent et lisible* avec l'expression lambda. Dans les deux cas, le paramètre `e` représente l'événement (p.ex. un clic). On peut lire l'expression lambda `e -> System.out.println("Hello World!")` comme 'Prend l'événement et fait ceci avec : affiche "Hello World!" à la console'.
 
 #### En général
 
 Plus généralement, les expressions lambda sont souvent utilisées avec les méthodes `.forEach`  des collections comme des `List` ou des `Map` et avec les méthodes `.filter` et `.map` qu'on peut utiliser sur un `Stream` de ces collections.
 
-### Quelques tutoriels
+### Quelques tutoriels pour les interfaces
 
 * [Oracle - explications de fond avec exemple JavaFX](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#lambda-expressions-in-gui-applications)
 * [W3 Schools - tutoriel rapide pour l'usage général](https://www.w3schools.com/java/java_lambda.asp)
