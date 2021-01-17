@@ -6,9 +6,49 @@ JavaFX est un framework qui gère les interfaces graphiques en Java pour les app
 * **contrôles** qui réagissent aux interactions des utilisateurs
 * comme tous les autres programmes Java, un **point d'entrée** pour l'application. En Java, c'est la méthode `main()`. En JavaFX, c'est la classe qui contient la méthode `main()`. Cette classe `extends` la classe JavaFX `Application` et a une structure prédéfinie.
 
+```java
+import javafx.application.Application;
+import javafx.stage.Stage;
+
+/** Application minimale JavaFX */
+public class App extends Application {
+
+    @Override
+    public void start(Stage stage) 
+    {
+        /* TODO Définir le graphe de scène
+        
+        Options :
+        - ici en ajoutant les composants directement
+        - avec des fichiers fxml, en les chargeant ici           */
+
+        /* TODO Spécifier l'action des contrôles
+
+        Options :
+        - ici avec des déclarations spécifiques
+        - dans d'autres classes, notamment celles liées au fxml  */
+
+        /* TODO Définir la logique du programme
+
+        Options :
+        - ici avec des déclarations spécifiques
+        - dans cette classe avec des méthodes spécifiques
+        - dans d'autres classes, selon le besoin                 */
+
+        stage.show();
+    }
+
+    public static void main(String[] args) 
+    {
+        launch();
+    }
+
+}
+```
+
 Pour les programmes JavaFX simples, le graphe de scène est défini dans le point d'entrée, soit la classe d'application.
 
-Pour les programmes JavaFX plus grands ou qui utilisent plusieurs scènes ou fenêtres, le ou les graphes de scène sont définis dans un fichier spécial avec l'extension `.fxml`. Le fichier `fmxl` est similaire aux fichiers `html` qui structurent les sites Web : ils utilisent tous deux des balises imbriquées. De même, les styles peuvent être définis dans le fichier `fxml` directement ou avec un fichier de styles `css`, tout comme le font les pages `html`. Dans ces programmes, au lieu d'être *défini* dans la classe d'application, le graphe de scène est *chargé* à partir du fichier `fxml` par une fonction `FXMLLoader` spéciale dans la classe d'application.
+Pour les programmes JavaFX plus grands ou qui utilisent plusieurs scènes ou fenêtres, le ou les graphes de scène sont définis dans un fichier de type `fxml`. Le fichier `fmxl` est similaire aux fichiers `html` qui structurent les sites Web : ils utilisent tous deux des balises imbriquées. De même, les styles peuvent être définis dans le fichier `fxml` directement ou avec un fichier de styles `css`, tout comme le font les pages `html`. Dans ces programmes, au lieu d'être *défini* dans la classe d'application, le graphe de scène est *chargé* à partir du fichier `fxml` par une fonction `FXMLLoader()` spéciale dans la classe d'application.
 
 Maven a des archétypes de projet pour les projets JavaFX *simple* et avec *fxml*. Dans la fenêtre `Archetype` de l'assistant de projet Maven d'Eclipse, commencez à taper "openjfx" dans la barre de recherche. Choisissez `javafx-archetype-simple` pour un projet de base ou `javafx-archetype-fxml` pour un projet basé sur fxml.
 
@@ -75,9 +115,9 @@ var label = new Label();
 var vbox = new VBox(label, hbox);  // label et hbox sont enfants de vbox
 ```
 
->Noter qu'il faut déclarer les objets les plus bas dans l'arboresence en premier afin de composer les objet plus près de la racine.
+>Noter qu'il faut déclarer les objets les plus bas dans l'arboresence en premier afin de composer les objets plus près de la racine.
 
-Parce que le graphe de scène est hiérarchique, on peut aussi déclarer les `Node` ou le `Root` qui sont composé d'autres `Node` plus explicitement avec la chaîne de méthodes `.getChildren().add()` ou `.getChildren().addAll()`. La méthode `getChildren()` retourne la liste des enfants et les méthodes `add()` et `addAll()` ajoute des éléments à cette liste. Par exemple :
+Parce que le graphe de scène est hiérarchique, on peut aussi déclarer les `Node` ou le `Root` qui sont composé d'autres `Node` plus explicitement avec la chaîne de méthodes `.getChildren().add()` ou `.getChildren().addAll()`. La méthode `getChildren()` retourne la liste des enfants et les méthodes `add()` et `addAll()` ajoutent des éléments à cette liste. Par exemple :
 
 ```java
 var hbox = new HBox();
@@ -102,16 +142,18 @@ var scene = new Scene(vbox, width, height); // `vbox` est spécifié comme le `R
 stage.setScene(scene); // `scene` est spécifié comme la scène de la fenêtre `stage`
 ```
 
-### Ressources pour apprendre d'avantage sur les objets JavaFX
+### Ressources sur les composants JavaFX et la structure de projets JavaFX
+
+La découverte des différents composants est laissé à votre curiosité et besoin. Voici quelques ressources utiles à cette fin :
 
 * [Tutoriel pour débutats](https://coderslegacy.com/java/javafx-tutorial/)
   * bien structuré avec exemples complets
+* [Tutoriel Youtube](https://www.youtube.com/playlist?list=PLS1QulWo1RIaUGP446_pWLgTZPiFizEMq)
+  * ignorer 1 et 2 (on le fait différemment avec Maven); 3 à 7 sont essentiels; les autres sont utiles selon ton intérêt
 * [Tutorials Point JavaFX](https://www.tutorialspoint.com/javafx/index.htm)
   * complet, détaillé, profond
 * [Javapedia](https://javafxpedia.com/)
   * couvre des stratégies de développement logiciel avec JavaFX, présumant une certaine expérience en développement
-* [Tutoriel Youtube](https://www.youtube.com/playlist?list=PLS1QulWo1RIaUGP446_pWLgTZPiFizEMq)
-  * ignorer 1 et 2 (on le fait différemment avec Maven); 3 à 7 sont essentiels; les autres sont utiles selon ton intérêt
 
 ## Les contrôles et les expressions lambda en Java
 
