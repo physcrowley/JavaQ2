@@ -15,7 +15,8 @@ import javafx.stage.Stage;
 public class App extends Application {
 
     @Override
-    public void start(Stage stage) {
+    public void start(Stage stage) 
+    {
 
         // ------CONTRÔLES-------
         var label = new Label("Voici un exemple avec un champ de texte et un bouton.");
@@ -25,8 +26,10 @@ public class App extends Application {
         // TODO écrire l'action pour le bouton
         
         // ----------MISE EN PAGE------
-        var hbox = new HBox(text, button);
-        var root = new VBox(label, hbox); // ou: var root = new VBox(); root.getChildren().addAll(label, hbox);
+        var hbox = new HBox(text, button); 
+            // ou: var hbox = new HBox(); hbox.getChildren().addAll(text, button);
+        var root = new VBox(label, hbox); 
+            // ou: var root = new VBox(); root.getChildren().addAll(label, hbox);
 
         // ----------MISE EN SCÈNE---------
         var scene = new Scene(root, 600, 200); 
@@ -34,7 +37,8 @@ public class App extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         launch();
     }
 
