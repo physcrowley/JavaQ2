@@ -116,7 +116,7 @@ Passons à travers chaque élément :
 
 ### Utilisation
 
-Les expressions lambda sont utilisées pour *implémenter une interface ou une classe abstrait*, notamment quand :
+Les expressions lambda sont utilisées pour *implémenter une interface*, notamment quand :
 
 1. l'interface spécifie seulement une méthode et
 2. l'interface est un paramètre à une autre méthode
@@ -131,7 +131,7 @@ Voici comment on pourrait définir l'action d'un bouton qui affiche un texte à 
 var button = new Button();
 
 button.setOnAction(
-    // classe anonyme passé comme argument à la méthode setOnAction
+    // interface passé comme argument à la méthode setOnAction
     //     son seul but est d'implémenter l'interface `EventHandler`
     new EventHandler<ActionEvent>() {
             
