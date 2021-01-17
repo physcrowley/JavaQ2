@@ -101,7 +101,70 @@ stage.setScene(scene); // `scene` est spécifié comme la scène de la fenêtre 
 
 ## Les contrôles et les expressions lambda en Java
 
-* [W3 Schools](https://www.w3schools.com/java/java_lambda.asp)
+Les **expressions lambda** sont utilisées pour écrire une fonction **anonyme** succinctement avec la syntaxe :
+
+```java
+() -> {}
+```
+
+Passons à travers chaque élément :
+
+* anonyme : on ne donne pas de nom à la fonction qu'on décrit
+* `()` : les paramètres, d'aucun à plusieurs, comme pour une fonction normale, mais on n'inclut pas les types des paramètres
+* `{}` : une ou plusieurs commandes Java qui peuvent retourner ou non une valeur... elles si devraient être simples (pas de nouvelles variables, ni de conditions, ni de boucles)
+* opérateur `->` : indique que c'est une expression lambda est donc de prendre le(s) paramètre(s) à la gauche pour les commandes à la droite.
+
+### Utilisation
+
+Les expressions lambda sont utilisées pour *implémenter une interface ou une classe abstrait*, notamment quand :
+
+1. l'interface spécifie seulement une méthode et
+2. l'interface est un paramètre à une autre méthode
+
+Dans JavaFX on le voit beacoup avec la méthode `.setOnAction` des boutons et des autres contrôles qui prennent l'interface `EventHandler` comme paramètre.
+
+Voici comment on pourrait définir l'action d'un bouton qui affiche un texte à la console à chaque clic :
+
+#### Sans les expressions lambda
+
+```java
+var button = new Button();
+
+button.setOnAction(
+    // classe anonyme passé comme argument à la méthode setOnAction
+    //     son seul but est d'implémenter l'interface `EventHandler`
+    new EventHandler<ActionEvent>() {
+            
+            @Override
+            // implémentation de la méthode `handle` de l'interface
+            // remarquer que `handle` prend un paramètre de type
+            //    `ActionEvent` qu'on a nommé `e`
+            public void handle(ActionEvent e) {
+                System.out.println("Hello World!");
+            }
+        }
+    );
+```
+
+#### Avec une expression lambda
+
+```java
+var button = new Button();
+
+// l'expression lambda qui représente la partie utile de l'exemple précédant
+button.setOnAction( e -> System.out.println("Hello World!") );
+```
+
+Dans les deux versions, le résultat est le même, mais c'est *beaucoup plus transparent* avec l'expression lambda. Dans les deux cas, le paramètre `e` représente l'événement (p.ex. un clic). On peut lire l'expression lambda `e -> System.out.println("Hello World!")` comme 'Prend l'événement et fait ceci avec : affiche "Hello World!" à la console'.
+
+#### En général
+
+Plus généralement, les expressions lambda sont souvent utilisées avec les méthodes `.forEach`  des collections comme des `List` ou des `Map` et avec les méthodes `.filter` et `.map` qu'on peut utiliser sur un `Stream` de ces collections.
+
+### Quelques tutoriels
+
+* [W3 Schools - tutoriel rapide](https://www.w3schools.com/java/java_lambda.asp)
+* [Oracle (documentation officielle) - tutoriel complet](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html)
 
 ## Définir les styles avec le CSS
 
