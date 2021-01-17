@@ -163,8 +163,8 @@ Plus généralement, les expressions lambda sont souvent utilisées avec les mé
 
 ### Quelques tutoriels
 
-* [W3 Schools - tutoriel rapide](https://www.w3schools.com/java/java_lambda.asp)
-* [Oracle (documentation officielle) - tutoriel complet](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html)
+* [Oracle - explications de fond avec exemple JavaFX](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#lambda-expressions-in-gui-applications)
+* [W3 Schools - tutoriel rapide pour l'usage général](https://www.w3schools.com/java/java_lambda.asp)
 
 ## Définir les styles avec le CSS
 
