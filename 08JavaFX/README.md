@@ -3,7 +3,7 @@
 ## Table des matières
 
 * [e(fx)clipse et Scene Builder](#efxclipse-et-scene-builder)
-* [Le graphe de scène](#le-document-object-model-et-le-graphe-de-sc%C3%A8ne)
+* [Le graphe de scène](#le-graphe-de-sc%C3%A8ne)
 * [Contrôles avec les expressions lambda](#les-contr%C3%B4les-et-les-expressions-lambda-en-java)
 * [Travailler avec les fichiers FXML](#travailler-avec-les-fichiers-fxml)
 * [Styles avec le CSS](#d%C3%A9finir-les-styles-avec-le-css)
@@ -74,7 +74,7 @@ Consultez les didacticiels vidéo suivants pour l'installation de ces deux logic
 * [e(fx)clipse](https://www.loom.com/share/7c38e86ac597464e82d354a35cefdd2d)
 * [Scene Builder](https://www.loom.com/share/057266251dc342249132d29f523d0f6b)
 
-## Le "Document Object Model" et le graphe de scène
+## Le graphe de scène
 
 Le **document object model** ou DOM est un terme qui vient du *javascript* pour décrire la structure des éléments sur un site Web. L'équivalent dans une application *JavaFX* s'appelle le **graphe de scène**. Dans les deux cas, le DOM et le graphe, on décrit la relation entre des objets *parents* et des objets *enfants*.
 
