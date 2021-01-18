@@ -238,9 +238,91 @@ Consulter les deux exemples suivants. Chacun décrit deux scenes distinctes et f
 * [simpleswitch](https://github.com/physcrowley/simpleswitch/tree/main/simpleswitch)
 * [fxmlswitch](https://github.com/physcrowley/fxmlswitch/tree/main/fxmlswitch)
 
-### Balises importantes dans les fichiers FXML
+### Structure d'un fichier FXML de base
 
->Info a venir
+Voici le fichier `fxml` créer via le menu Eclipse : New... > **Other** > JavaFX > New FXML Document.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
+	<!-- TODO Add Nodes -->
+</AnchorPane>
+```
+
+#### Analyse du fichier
+
+Partie | Explication
+- | -
+`<?xml version="1.0" encoding="UTF-8"?>` | La première ligne est une déclaration qui spécifie au compilateur le format du document utilisant la combinaison de balises `<?xml` et `?>`
+`<?import javafx.scene.layout.AnchorPane?>` | La deuxième ligne est identique à ce que nous faisons dans les fichiers `java`, soit déclarer les autres modules nécessaires, les `import`. Le *langage* est identique à ce que nous faisons dans Java, mais la *syntaxe* de la déclaration est comme celle de la première ligne : au lieu de terminer avec `;`, la déclaration est indiquée par les balises `<?import` et `?>`.
+`<AnchorPane ...>` ... `</AnchorPane>` | Les prochaines lignes définissent l'élément `AnchorPane`. En fait, c'est le début de notre définition du **graphe de scène**. Il y a seulement deux détails en ce moment pour le graphe de scène : <p> **UN** Que l'élément `AnchorPane` est le `Root`, le premier dans le graphe. <p> **DEUX** Qu'on veut que le compilateur reconnaisse le nom "AnchorPane" comme un élément JavaFX. On déclare ce qui s'appelle un *namespace* avec la partie `xmlns:fx = "http://javafx.com/fxml/1"`. Le mot-clé `xmlns:` est nécessaire. L'URL n'a pas d'importance, mais doit être unique dans le document. La partie qui compte est ce qui vient après `xmlns:` soit `fx`. Le compilateur utilisera tous les éléments identifiés comme `fx` et les ajoutera au **graphe de scène**.
+`<!-- TODO Add Nodes -->` | Cette ligne est un commentaire. On peut ajouter des commentaires n'import òu avec les caractères initiaux `<!--` et finaux `-->`.
+
+
+>Heureusement, vous n'aurez jamais à créer un document comme ça de rien parce qu'un modèle de base est toujours disponible soit via *e(fx)clipse* ou via les archétypes *Maven*.
+
+#### Syntaxe générale
+
+Tous les éléments JavaFX, comme n'importe quel élément `xml` seront définis par des balises. Les balises `xml` suivent le format `<élément attribut="valeur">` ... `</élément>` où :
+
+* l'**élément** est un nom que le programme qui utilise le fichier `xml` reconnaîtera. S'il est dans le *namespace* `fx`, on saura qu'il faut chercher l'élément correspondant dans les modules JavaFX.
+* les **attributs** sont un nombre restreint de caractéristiques, comme un *namespace* ou un autre identifiant, qui sont déclarer avant de fermer la balise initiale.
+* on assigne à chaque attribut une **valeur** entre guillemets avec la syntaxe `attribut="valeur"`
+* pour la balise finale, le nom de l'élément est précédé par le symbole `/`. Donc, `<AnchorPane>` pour ouvrir et `</AnchorPane>` pour fermer.
+
+### Exemple plus complet
+
+Voici un des deux fichiers `fxml` dans l'archétype Maven "javafx-archetype-fxml".
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.djc.fxmlswitch.PrimaryController">
+   <children>
+      <Label text="Primary View" />
+      <Button fx:id="primaryButton" text="Switch to Secondary View" onAction="#switchToSecondary"/>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
+```
+
+On reconnaît la structure de base d'un fichier `fxml`. Voici quelques nouveaux éléments à remarquer :
+
+Partie | Remarques
+- | -
+l'attribut `fx:controller` du `Root` | spécifie le **nom pleinement qualifié** de la classe Java qui contient tout le code pour contrôler cet élément *et ses enfants*, p. ex. `fx:controller = "edu.djc.fxmlswitch.PrimaryController"`
+`<VBox ...>` ... `</VBox>` | tout ce qui concerne les éléments inférieurs à `VBox` dans le graphe de scène se trouve *entre* les balises initiale et finale du `VBox`
+`<children>` ... `</children>` | entoure les enfants de l'élément `VBox` (le `Label` et le `Button`)
+attribut `text` | spécifie le texte à afficher sur un élément du graphe de scène
+attribut `fx:id` | spécifie le **nom de variable** utilisé dans les fichiers `java`. p. ex. `Button`: `fx:id="primaryButton"`
+attribut `onAction` | remplace le `setOnAction()` des programmes JavaFX simples. La valeur est une référence à une méthode spécifique. p. ex. `onAction="#switchToSecondary"` pointe à `switchToSecondary()` qui doit être définie dans la classe contrôleur `edu.djc.fxmlswitch.PrimaryController`. <p> ❗ le `#` devant le nom est essentiel
+
+>Il y a d'autres éléments et attributs dans le fichier liés à l'apparence. On les laisse pour la leçon sur le `css`.
+
+>Noter une syntaxe *raccourcie* pour les balises `Label` et `Button` qui n'avaient aucune propriété interne à spécifier : `<Label text="Primary View" />` au lieu de `<Label text="Primary View"> </Label>`. C'est une syntaxe acceptable.
+
+### Utiliser Scene Builder
+
+Quand le logiciel Scene Builder est installé, au lieu d'éditer le fichier `fxml` directement dans l'éditeur de texte, on peut l'éditer visuellement :
+
+* en cliquant et déplaçant différents éléments sur la `Scene`
+* en spécifiant le contrôleur du `Root` via un menu
+* en spécifiant la méthode `onAction` via un menu
+* en spécifiant d'autres attributs et propriétés via des menus
+
+Scene Builder nous permet de prévisualiser le résultat avant de retourner dans l'EDI.
+
+En sauvegardant le fichier `fxml` dans Scene Builder, vous pouvez voir ces changements dans votre EDI et observer les ajouts et les modifications aux balises, aux attributs et aux propriétés de la structure `xml`.
 
 ## Définir les styles avec le CSS
 
