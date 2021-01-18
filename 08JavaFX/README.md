@@ -255,7 +255,7 @@ Voici le fichier `fxml` créer via le menu Eclipse : New... > **Other** > JavaFX
 #### Analyse du fichier
 
 Partie | Explication
-- | -
+--- | ---
 `<?xml version="1.0" encoding="UTF-8"?>` | La première ligne est une déclaration qui spécifie au compilateur le format du document utilisant la combinaison de balises `<?xml` et `?>`
 `<?import javafx.scene.layout.AnchorPane?>` | La deuxième ligne est identique à ce que nous faisons dans les fichiers `java`, soit déclarer les autres modules nécessaires, les `import`. Le *langage* est identique à ce que nous faisons dans Java, mais la *syntaxe* de la déclaration est comme celle de la première ligne : au lieu de terminer avec `;`, la déclaration est indiquée par les balises `<?import` et `?>`.
 `<AnchorPane ...>` ... `</AnchorPane>` | Les prochaines lignes définissent l'élément `AnchorPane`. En fait, c'est le début de notre définition du **graphe de scène**. Il y a seulement deux détails en ce moment pour le graphe de scène : <p> **UN** Que l'élément `AnchorPane` est le `Root`, le premier dans le graphe. <p> **DEUX** Qu'on veut que le compilateur reconnaisse le nom "AnchorPane" comme un élément JavaFX. On déclare ce qui s'appelle un *namespace* avec la partie `xmlns:fx = "http://javafx.com/fxml/1"`. Le mot-clé `xmlns:` est nécessaire. L'URL n'a pas d'importance, mais doit être unique dans le document. La partie qui compte est ce qui vient après `xmlns:` soit `fx`. Le compilateur utilisera tous les éléments identifiés comme `fx` et les ajoutera au **graphe de scène**.
@@ -299,7 +299,7 @@ Voici un des deux fichiers `fxml` dans l'archétype Maven "javafx-archetype-fxml
 On reconnaît la structure de base d'un fichier `fxml`. Voici quelques nouveaux éléments à remarquer :
 
 Partie | Remarques
-- | -
+--- | ---
 l'attribut `fx:controller` du `Root` | spécifie le **nom pleinement qualifié** de la classe Java qui contient tout le code pour contrôler cet élément *et ses enfants*, p. ex. `fx:controller = "edu.djc.fxmlswitch.PrimaryController"`
 `<VBox ...>` ... `</VBox>` | tout ce qui concerne les éléments inférieurs à `VBox` dans le graphe de scène se trouve *entre* les balises initiale et finale du `VBox`
 `<children>` ... `</children>` | entoure les enfants de l'élément `VBox` (le `Label` et le `Button`)
