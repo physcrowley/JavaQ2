@@ -223,7 +223,7 @@ Plus généralement, les expressions lambda sont utilisées avec les méthodes `
 Lorsqu'un projet passe d'une structure simple à une structure avec des fichiers FXML, c'est parce qu'on veut que les fichiers deviennents plus **spécialisés**.
 
 Fichier | Rôle
-- | -
+--- | ---
 App.java | point d'ancrage : lancer l'application et créer des objets centraux
 *.fxml | décrire les graphes de scène
 *Controller.java | définir les actions des contrôles décrites dans un fichier `fxml` : il y a généralement un fichier de ce type par fichier `fxml`
@@ -259,7 +259,7 @@ Partie | Explication
 `<?xml version="1.0" encoding="UTF-8"?>` | La première ligne est une déclaration qui spécifie au compilateur le format du document utilisant la combinaison de balises `<?xml` et `?>`
 `<?import javafx.scene.layout.AnchorPane?>` | La deuxième ligne est identique à ce que nous faisons dans les fichiers `java`, soit déclarer les autres modules nécessaires, les `import`. Le *langage* est identique à ce que nous faisons dans Java, mais la *syntaxe* de la déclaration est comme celle de la première ligne : au lieu de terminer avec `;`, la déclaration est indiquée par les balises `<?import` et `?>`.
 `<AnchorPane ...>` ... `</AnchorPane>` | Les prochaines lignes définissent l'élément `AnchorPane`. En fait, c'est le début de notre définition du **graphe de scène**. Il y a seulement deux détails en ce moment pour le graphe de scène : <p> **UN** Que l'élément `AnchorPane` est le `Root`, le premier dans le graphe. <p> **DEUX** Qu'on veut que le compilateur reconnaisse le nom "AnchorPane" comme un élément JavaFX. On déclare ce qui s'appelle un *namespace* avec la partie `xmlns:fx = "http://javafx.com/fxml/1"`. Le mot-clé `xmlns:` est nécessaire. L'URL n'a pas d'importance, mais doit être unique dans le document. La partie qui compte est ce qui vient après `xmlns:` soit `fx`. Le compilateur utilisera tous les éléments identifiés comme `fx` et les ajoutera au **graphe de scène**.
-`<!-- TODO Add Nodes -->` | Cette ligne est un commentaire. On peut ajouter des commentaires n'import òu avec les caractères initiaux `<!--` et finaux `-->`.
+`<!-- TODO Add Nodes -->` | Cette ligne est un commentaire. On peut ajouter des commentaires n'importe òu avec les caractères initiaux `<!--` et finaux `-->`.
 
 
 >Heureusement, vous n'aurez jamais à créer un document comme ça de rien parce qu'un modèle de base est toujours disponible soit via *e(fx)clipse* ou via les archétypes *Maven*.
@@ -269,7 +269,7 @@ Partie | Explication
 Tous les éléments JavaFX, comme n'importe quel élément `xml` seront définis par des balises. Les balises `xml` suivent le format `<élément attribut="valeur">` ... `</élément>` où :
 
 * l'**élément** est un nom que le programme qui utilise le fichier `xml` reconnaîtera. S'il est dans le *namespace* `fx`, on saura qu'il faut chercher l'élément correspondant dans les modules JavaFX.
-* les **attributs** sont un nombre restreint de caractéristiques, comme un *namespace* ou un autre identifiant, qui sont déclarer avant de fermer la balise initiale.
+* les **attributs** sont un nombre restreint de caractéristiques, comme un *namespace* ou un autre identifiant, qui sont déclarées avant de fermer la balise initiale.
 * on assigne à chaque attribut une **valeur** entre guillemets avec la syntaxe `attribut="valeur"`
 * pour la balise finale, le nom de l'élément est précédé par le symbole `/`. Donc, `<AnchorPane>` pour ouvrir et `</AnchorPane>` pour fermer.
 
