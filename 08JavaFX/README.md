@@ -2,11 +2,11 @@
 
 ## Table des matières
 
-[e(fx)clipse et Scene Builder](#efx)
-[Le "Document Object Model" et le graphe de scène](#dom)
-[]()
-[]()
-[]()
+* [e(fx)clipse et Scene Builder](#efxclipse-et-scene-builder)
+* [Le graphe de scène](#le-document-object-model-et-le-graphe-de-sc%C3%A8ne)
+* [Contrôles avec les expressions lambda](#les-contr%C3%B4les-et-les-expressions-lambda-en-java)
+* [Travailler avec les fichiers FXML](#travailler-avec-les-fichiers-fxml)
+* [Styles avec le CSS](#d%C3%A9finir-les-styles-avec-le-css)
 
 JavaFX est un framework qui gère les interfaces graphiques en Java pour les applications de bureau et Web. Chaque programme JavaFX aura les composants suivants:
 
@@ -60,7 +60,7 @@ Pour les programmes JavaFX plus grands ou qui utilisent plusieurs scènes ou fen
 
 Maven a des archétypes de projet pour les projets JavaFX *simple* et avec *fxml*. Dans la fenêtre `Archetype` de l'assistant de projet Maven d'Eclipse, commencez à taper "openjfx" dans la barre de recherche. Choisissez `javafx-archetype-simple` pour un projet de base ou `javafx-archetype-fxml` pour un projet basé sur fxml.
 
-## e(fx)clipse et Scene Builder {#efx}
+## e(fx)clipse et Scene Builder
 
 L'extension **e(fx)clipse** Eclipse vous donnera accès à des outils particulièrement utiles pour gérer les fichiers `fxml`.
 
@@ -74,7 +74,7 @@ Consultez les didacticiels vidéo suivants pour l'installation de ces deux logic
 * [e(fx)clipse](https://www.loom.com/share/7c38e86ac597464e82d354a35cefdd2d)
 * [Scene Builder](https://www.loom.com/share/057266251dc342249132d29f523d0f6b)
 
-## Le "Document Object Model" et le graphe de scène {#dom}
+## Le "Document Object Model" et le graphe de scène
 
 Le **document object model** ou DOM est un terme qui vient du *javascript* pour décrire la structure des éléments sur un site Web. L'équivalent dans une application *JavaFX* s'appelle le **graphe de scène**. Dans les deux cas, le DOM et le graphe, on décrit la relation entre des objets *parents* et des objets *enfants*.
 
