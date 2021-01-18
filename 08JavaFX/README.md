@@ -218,6 +218,30 @@ Plus généralement, les expressions lambda sont utilisées avec les méthodes `
 * [Oracle - explications de fond avec exemple JavaFX](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#lambda-expressions-in-gui-applications)
 * [W3 Schools - tutoriel rapide pour l'usage général](https://www.w3schools.com/java/java_lambda.asp)
 
+## Travailler avec les fichiers FXML
+
+Lorsqu'un projet passe d'une structure simple à une structure avec des fichiers FXML, c'est parce qu'on veut que les fichiers deviennents plus **spécialisés**.
+
+Fichier | Rôle
+- | -
+App.java | point d'ancrage : lancer l'application et créer des objets centraux
+*.fxml | décrire les graphes de scène
+*Controller.java | définir les actions des contrôles décrites dans un fichier `fxml` : il y a généralement un fichier de ce type par fichier `fxml`
+*.css | décrire l'apparence des composants dans les graphes de scène : un projet peut avoir un seul fichier `css` global ou plusiers fichiers `css` si les styles de scène varient beaucoup d'une vue à l'autre.
+
+>Les fichiers `css` sont un niveau de spécialisation encore plus profond, car c'est possible de décrire les styles dans les fichiers `fxml` aussi. C'est un sujet pour la prochaine leçon.
+
+### Comparaison avec le projet simple
+
+Consulter les deux exemples suivants. Chacun décrit deux scenes distinctes et fournit un bouton pour changer à l'autre scène. Dans un cas, c'est fait sans `fxml` et dans le deuxième, on introduit la spécialisation avec des fichiers `fxml`.
+
+* [simpleswitch](https://github.com/physcrowley/simpleswitch/tree/main/simpleswitch)
+* [fxmlswitch](https://github.com/physcrowley/fxmlswitch/tree/main/fxmlswitch)
+
+### Balises importantes dans les fichiers FXML
+
+>Info a venir
+
 ## Définir les styles avec le CSS
 
 >Info à venir
