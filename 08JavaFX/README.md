@@ -1,5 +1,7 @@
 # Commencer avec JavaFX
 
+---
+
 ## Table des matières
 
 * [e(fx)clipse et Scene Builder](#efxclipse-et-scene-builder)
@@ -7,6 +9,8 @@
 * [Contrôles avec les expressions lambda](#les-contr%C3%B4les-et-les-expressions-lambda-en-java)
 * [Travailler avec les fichiers FXML](#travailler-avec-les-fichiers-fxml)
 * [Styles avec le CSS](#d%C3%A9finir-les-styles-avec-le-css)
+
+--- 
 
 JavaFX est un framework qui gère les interfaces graphiques en Java pour les applications de bureau et Web. Chaque programme JavaFX aura les composants suivants:
 
