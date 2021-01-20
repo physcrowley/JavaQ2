@@ -334,4 +334,134 @@ En sauvegardant le fichier `fxml` dans Scene Builder, vous pouvez voir ces chang
 
 ## Définir les styles avec le CSS
 
->Info à venir
+### Référence principale
+
+Voici le site pour trouver comment appliquer les styles aux différents éléments d'un graphe de scène. Là, on trouve les noms et les valeurs pour tous les styles qu'on peut modifier pour chaque type d'objet possible dans un graphe de scène JavaFX.
+
+[Java CSS Reference Guide](https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html)
+
+>Noter que le `css` utilisé ici est très semblable au `css` utilisé pour les sites Web mais qu'il y a quelques différences, notamment le préfixe `fx` sur chacune des propriétés.
+
+>Pour des références sur le `css` et le `html`, les tutoriels de [W3Schools](https://www.w3schools.com/Css/css_intro.asp) sont fortement recommandés.
+
+### Exemple
+
+Voir la référence pour des détails additionnels, mais voici un exemple simple de fichier `css` pour les projets JavaFX.
+
+```css
+.root {
+  -fx-background-color: mediumaquamarine;
+  -fx-font-family: 'monospace';
+}
+
+.button {
+  -fx-padding: 20;
+}
+
+#btn1 {
+  -fx-background-color: crimson;
+}
+```
+
+Partie | Description
+--- | ---
+`.root`, `.button`  | Fait référence à **tous les objets JavaFX d'un même type** avec la notation `.<type>` où toutes les lettres sont en minuscule. Ainsi les styles spécifiés par le bloc `.root` s'appliquent à *tous* les objets dans le graphe de scène et les styles spécifiés par le bloc `.button` s'appliquent à tous les objets `Button` dans le graphe de scène. Les `Button` appliquent les deux ensembles de styles, les styles spécifiés par `.button` ayant priorité en cas de conflit.
+`#btn1` | Fait référence au **nom de variable d'un objet**, ou si le nom est spécifié dans un fichier `fxml`, à son attribut `fx:id="<nom>"`. Ainsi, si le nom "btn1" réfère à un `Button`, les styles spécifiés par .`root`, `.button` **et** par `#btn1` seront tous appliqués, les styles pour `#btn1` ayant priorité en cas de conflit.
+`-fx-padding: 20;` | Combinaison `<propriété>: <valeur>;` qui donne la spécification pour un élément de style. Les propriétés appliquables et les valeurs qu'elles acceptent sont décrites dans la référence Java CSS plus haut.
+
+### Organisation des fichiers CSS dans le projet
+
+⚠ C'est important de placer les fichiers `css` avec les fichiers `fxml` dans le dossier "src/main/ressources" du projet créé avec l'archétype Maven `javafx-archetype-fxml`.
+
+Selon la configuration de cet archétype Maven, les fichiers dans le dossier "src/main/ressources" seront **copiés** dans le même dossier que les fichiers `.class`. Cela permet au programme de les trouver relativement à la classe principale `App.class` lors de l'exécution du programme.
+
+Voici une vue *partielle* de la structure sur le disque d'un projet utilisant cet archétype :
+
+```
+Projet
+|---src/main/
+|   |---java ⬅ Fichiers Java ici
+|   |   `---edu/ics4u/exemple
+|   |       |---App.java
+|   |       |---PrimaryController.java
+|   |       `---SecondaryController.java
+|   `---ressources ⬅ Autres fichiers ici
+|       `---edu/ics4u/exemple
+|           |---app.css ⬅ le CSS ici
+|           |---primary.fxml
+|           `---secondary.fxml
+|---target/classes/ ⬅ Fichiers compilés ici
+|   `---edu/ics4u/exemple
+|       |---App.class
+|       |---app.css
+|       |---primary.fxml
+|       |---PrimaryController.class
+|       |---secondary.fxml
+|       `---SecondaryController.class
+...
+
+```
+
+On voit que les contenus du même package sont placés ensemble dans le même dossier de sortie. C'est important, parce qu'on peut utiliser l'adresse d'`App.class` dans notre programme pour aller chercher les autres ressources au besoin.
+
+### Utiliser un fichier CSS dans le programme
+
+#### Avec un fichier CSS pour tout le programme
+
+>Cette méthode s'applique avec les projets JavaFX simple ou avec fichier `fxml`.
+
+Avec un seul fichier `css` qui s'applique à l'ensemble du programme, on veut normalement lier le fichier `css` directement à la `Root` du projet. La façon la plus simple est dans la méthode `start()` avec la commande suivante :
+
+```java
+// scene.getStylesheets.add(cheminDuFichier)
+scene.getStylesheets().add(this.getClass().getResource("app.css").toExternalForm());
+```
+
+Wow!!! Regardons ça en petites bouchées.
+
+La partie `scene.getStylesheets.add()` fait exactement ce qui ça dit. La méthode `add()` prend le chemin au fichier `css` comme argument. C'est là que la commande devient plus compliqué.
+
+Voici une analyse de comment `this.getClass().getResource("app.css").toExternalForm()` retourne le chemin relatif du fichier "app.css" (son `url`) par rapport à la classe principale du programme :
+
+1. `this.getClass()` retourne le nom de la classe principale (`this`) sur le disque dur. Ce nom aura la forme de `<Nom>.class`, par exemple `App.class`
+2. `getResource()` cherche un fichier suivant le chemin relatif à la position de la classe principale
+3. `"app.css"` est le chemin relatif, présumant qu'un fichier nommé "app.css" se trouve dans le même dossier que la classe principale
+4. `.toExternalForm()` retourne l'URL (le chemin). Sans ça, `getResource()` retourne l'objet fichier lui-même et non son adresse.
+
+On voit quelque chose de semblable dans le code de démarrage de l'archétype `javafx-archetype-fxml`, dans la méthode `loadFXML()` qui ajoute le fichier `fxml` au programme. C'est la partie :
+
+```java
+App.class.getResource(fxml + ".fxml")
+```
+
+où `fxml + ".fxml"` s'évalue à un nom de fichier, soit "primary.fxml" ou "secondary.fxml". Cette ligne de code veut dire :
+
+1. `App.class` -> la classe principale (ce que `this.getClass()` retourne)
+2. `.getResource()` -> trouve le fichier suivant un URL (un chemin) relatif à `App.class`
+3. `fxml + ".fxml"` -> utilisant ce chemin. Les fichiers `fxml` sont copiés dans le même dossier que les fichiers `.class` du programme.
+
+Dans ce cas, on voulait charger le fichier lui-même alors la partie `toExternalForm()` qui retourne l'adresse du fichier n'est pas nécessaire.
+
+#### Avec un fichier CSS pour chaque fichier FXML
+
+C'est aussi possible d'écrire de nombreux fichiers `css` pour le même programme, notamment en assignant un fichier `css` par fichier `fxml`.
+
+>Cela est déconseillé si l'objectif est une apparence uniforme d'une vue à l'autre dans l'application, mais peut être utile si la vue doit changer considérablement.
+
+On le fait en ajoutant l'attribut suivant à l'élément `Root` du `fxml` :
+
+```xml
+...
+<!-- VBox est l'objet `Root` du graphe de scène -->
+<VBox stylesheets="@app.css" ... >
+  <!-- les <children> seraient déclarés ici -->
+</VBox>
+```
+
+*Les `...` indiquent que des lignes ou des attributs ont été omis du fichier `fxml` afin de rendre l'exemple plus clair.*
+
+>⚠ Le symbole `@` est critique devant le chemin. Le code ne fonctionne pas sans ça.
+
+Et *voila!* Dans ce cas, on spécifie le chemin du fichier `css` relativement au **fichier FXML**. Le programme va charger le fichier `css` si un fichier "app.css" est dans le même dossier que ce fichier `fxml`. Placer les fichiers `fxml` et `css` ensemble est recommandé.
+
+>Parce qu'on modifie un fichier `fxml`, c'est aussi possible de faire ça avec Scene Builder. On ouvre le fichier, sélectionne l'objet `Root` du côté gauche et choisie le fichier `css` souhaité pour l'attribut "Stylesheets" sur le côté droit.
