@@ -236,16 +236,16 @@ Pour des projets JavaFX plus structurés (avec le *FXML*) :
 
 ## Graphes de scène avec FXML
 
-Lorsqu'un projet passe d'une structure simple à une structure avec des fichiers FXML, c'est parce qu'on veut que les fichiers deviennents plus **spécialisés**.
+Lorsqu'un projet passe d'une structure simple à une structure avec des fichiers FXML, c'est parce qu'on veut que les fichiers deviennent plus **spécialisés**.
 
 Fichier | Rôle
 --- | ---
-App.java | point d'ancrage : lancer l'application et créer des objets centraux
+App.java | point d'ancrage : lancer l'application et créer des objets centraux (notamment la scène)
 *.fxml | décrire les graphes de scène
-*Controller.java | définir les actions des contrôles décrites dans un fichier FXML : il y a généralement un fichier de ce type par fichier FXML
-*.css | décrire l'apparence des composants dans les graphes de scène : un projet peut avoir un seul fichier CSS global ou plusiers fichiers CSS si les styles de scène varient beaucoup d'une vue à l'autre.
+*Controller.java | définir les actions des contrôles ajoutés au graphe de scène avec un fichier FXML : il y a un fichier de ce type par fichier FXML
+*.css | décrire l'apparence / le style des composants dans les graphes de scène : un projet peut avoir un seul fichier CSS global ou plusiers fichiers CSS si les styles de scène varient beaucoup d'une vue à l'autre.
 
->Les fichiers CSS sont un niveau de spécialisation encore plus profond, car c'est possible de décrire les styles dans les fichiers FXML aussi. C'est un sujet pour la prochaine leçon.
+>Les fichiers CSS sont un niveau de spécialisation encore plus profond, car c'est aussi possible de décrire les styles dans les fichiers JAVA et les fichiers FXML. C'est un sujet pour la prochaine leçon.
 
 ### Projet simple versus Projet structuré
 
@@ -281,10 +281,9 @@ Partie | Explication
 --- | ---
 `<?xml version="1.0" encoding="UTF-8"?>` | La première ligne est une déclaration qui spécifie au compilateur le format du document utilisant la combinaison de balises `<?xml` et `?>`
 `<?import javafx.scene.layout.AnchorPane?>` | La deuxième ligne est identique à ce que nous faisons dans les fichiers JAVA, soit déclarer les autres classes nécessaires, les `import`. Le *langage* est identique à ce que nous faisons dans Java, mais la *syntaxe* de la déclaration est comme celle de la première ligne : au lieu de terminer avec `;`, la déclaration est indiquée par les balises `<?import` et `?>`.
-`<AnchorPane ...>` ... `</AnchorPane>` | Les prochaines lignes définissent l'élément `AnchorPane`. En fait, c'est le début - le `Root` - de notre **graphe de scène**.
-`xmlns:fx = "http://javafx.com/fxml/1"` | C'est le seul attribut définie par défaut pour l'`AnchorPane`. On déclare ce qui s'appelle un *namespace* avec la partie `xmlns:fx = "http://javafx.com/fxml/1"`. Le mot-clé `xmlns:` (XML namespace) est nécessaire. L'URL n'a pas d'importance, mais doit être unique dans le document. La partie qui compte pour les projets JavaFX est ce qui vient après `xmlns:` soit `fx`. Le compilateur reconnaîtera tous les éléments identifiés avec `fx` comme des objets JavaFX et les ajoutera au graphe de scène.
-`<!-- TODO Add Nodes -->` | Cette ligne est un commentaire. On peut ajouter des commentaires n'importe òu avec les caractères initiaux `<!--` et finaux `-->`.
-
+`<AnchorPane ...>` ... `</AnchorPane>` | Ces balises définissent l'élément `AnchorPane`, le début - le `Root` - de notre **graphe de scène**.
+`xmlns:fx = "http://javafx.com/fxml/1"` | C'est le seul attribut définie par défaut pour l'`AnchorPane`. On déclare ce qui s'appelle un ***namespace** avec la partie `xmlns:fx = "http://javafx.com/fxml/1"`. Le mot-clé `xmlns:` (XML namespace) est nécessaire. L'URL n'a pas d'importance, mais doit être unique dans le document. La partie qui compte pour les projets JavaFX est ce qui vient après `xmlns:` soit `fx`. Le compilateur reconnaîtera tous les éléments identifiés avec `fx` comme des objets JavaFX et les ajoutera au graphe de scène.
+`<!-- TODO Add Nodes -->` | Cette ligne est un commentaire. On peut ajouter des commentaires n'importe où avec les caractères initiaux `<!--` et finaux `-->`.
 
 >Heureusement, vous n'aurez jamais à créer un document comme ça de rien parce qu'un modèle de base est toujours disponible soit via *e(fx)clipse* ou via les archétypes *Maven*.
 
@@ -292,7 +291,7 @@ Partie | Explication
 
 Tous les éléments JavaFX, comme n'importe quel élément XML, seront définis par des **balises** ("tags" en anglais). Les balises XML suivent le format `<élément attribut="valeur">` ... `</élément>` où :
 
-* l'**élément** est un nom que le programme qui utilise le fichier XML reconnaîtera. S'il est dans le *namespace* `fx`, on saura qu'il faut chercher l'élément correspondant dans les modules JavaFX.
+* l'**élément** est un nom que le programme qui utilise le fichier XML reconnaîtera. S'il est dans le *namespace* `fx`, on saura qu'il faut chercher l'élément correspondant dans les classes JavaFX.
 * les **attributs** sont un nombre restreint de caractéristiques, comme un *namespace* ou un style, qui sont déclarées avant de fermer la balise initiale.
 * on assigne à chaque attribut une **valeur** entre guillemets avec la syntaxe `attribut="valeur"`
 * pour la balise finale, le nom de l'élément est précédé par le symbole `/`. Donc, `<AnchorPane>` pour ouvrir et `</AnchorPane>` pour fermer.
@@ -330,7 +329,7 @@ On reconnaît la structure de base d'un fichier FXML. Voici quelques nouveaux é
 
 Partie | Remarques
 --- | ---
-l'attribut `fx:controller` du `Root` | spécifie le **nom pleinement qualifié** de la classe Java qui contient tout le code pour contrôler cet élément *et ses enfants*, p. ex. `fx:controller = "edu.djc.fxmlswitch.PrimaryController"`
+l'attribut `fx:controller` du `Root` | spécifie le **nom pleinement qualifié** de la classe Java qui contient tout le code pour contrôler cet élément *et ses enfants*. Ici, la classe `PrimaryController` du package `edu.djc.fxmlswitch` est nommée.
 `<VBox ...>` ... `</VBox>` | tout ce qui concerne les éléments inférieurs à `VBox` dans le graphe de scène se trouve *entre* les balises initiale et finale du `VBox`
 `<children>` ... `</children>` | entoure les enfants de l'élément `VBox` (le `Label` et le `Button`)
 attribut `text` | spécifie le texte à afficher sur un élément du graphe de scène
@@ -373,8 +372,8 @@ Dans un programme JavaFX *simple* on spécifie souvent quoi faire avec un outil 
 Où on peut voir les choses suivantes :
 
 * anonyme : on ne donne pas de nom à la fonction qu'on décrit (parce que le nom de cette fonction est déjà définie ailleurs, dans l'interface)
-* `()` : les paramètres, d'aucun à plusieurs, comme pour une fonction normale, mais on n'inclut pas les types des paramètres (parce que les types sont aussi définis dans l'interface)
-* `{}` : une ou plusieurs commandes Java qui peuvent retourner ou non une valeur... elles devraient être simples (pas de nouvelles variables, ni de conditions, ni de boucles)
+* `()` : les paramètres, d'aucun à plusieurs, correspondant à la signature de la méthode dans l'interface, mais on n'inclut pas les types (parce que les types sont aussi définis dans l'interface)
+* `{}` : une ou plusieurs commandes Java qui peuvent retourner ou non une valeur selon la signature de la méthode dans l'interface... ces commandes doivent être simples (pas de nouvelles variables, ni de conditions, ni de boucles)
 * opérateur `->` : indique que c'est une expression lambda est donc de prendre le(s) paramètre(s) à la gauche pour les commandes à la droite.
 
 #### Utilisation
@@ -393,17 +392,15 @@ Voici comment on pourrait définir l'action d'un bouton qui affiche un texte à 
 ```java
 var button = new Button();
 
-// implémentation explicite de 
-// la méthode `handle` de l'interface `EventHandler`
-button.setOnAction( new EventHandler<ActionEvent>()
-        {
-            @Override
-            public void handle(ActionEvent e)
-            {
-                System.out.println("Hello World!");
-            }
+// implémentation explicite de la méthode `handle` de l'interface `EventHandler`
+button.setOnAction( 
+    new EventHandler<ActionEvent>() {
+        
+        @Override public void handle(ActionEvent e) {
+            System.out.println("Hello World!");
         }
-    );
+    }
+);
 ```
 
 ##### Avec une expression lambda
@@ -442,9 +439,9 @@ Présumant un graphe de scène comportant un `AnchorPane` comme `Root` et un `Bu
 ```xml
 <AnchorPane xmlns:fx="www.javafx.com" 
             fx:controller="edu.ics4u.exemple.PrimaryController">
-  <children>
-    <Button text="Say Hello" onAction="#sayHello"/>
-  </children>
+    <children>
+        <Button text="Say Hello" onAction="#sayHello"/>
+    </children>
 </AnchorPane>
 ```
 
@@ -607,7 +604,7 @@ On le fait en ajoutant l'attribut suivant à l'élément `Root` du FXML :
 ...
 <!-- VBox est l'objet `Root` du graphe de scène -->
 <VBox stylesheets="@app.css" ... >
-  ...
+    ...
 </VBox>
 ```
 
