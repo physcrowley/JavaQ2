@@ -135,7 +135,7 @@ Les objets `Root` sont des contenants avec des façons différentes d'organiser 
 
 Les objets qu'on place dans l'objet `Root` s'appellent des `Node`, comme par exemple une étiquette (`Label`), un bouton (`Button`) ou un champ de texte(`TextBox`). Si l'objet le permet, on peut placer d'autres `Node` dans ces `Node`. Les éléments intéractifs comme les boutons sont des objets du module **Controls**, particulièrement du package `javafx.scene.control`.
 
->Vous pouvez trouver une liste des ces différents objets dans la documentation de la module *java.graphics* de JavaFX, notamment dans les packages [javafx.scene.layout](https://openjfx.io/javadoc/13/javafx.graphics/javafx/scene/layout/package-summary.html) et [javafx.scene.shape](https://openjfx.io/javadoc/13/javafx.graphics/javafx/scene/shape/package-summary.html) et dans la documentation de la module *java.controls*, surtout son package [javafx.scene.control](https://openjfx.io/javadoc/13/javafx.controls/javafx/scene/control/package-summary.html).
+>Vous pouvez trouver une liste des ces différents objets dans la documentation du module *java.graphics* de JavaFX, notamment dans les packages [javafx.scene.layout](https://openjfx.io/javadoc/13/javafx.graphics/javafx/scene/layout/package-summary.html) et [javafx.scene.shape](https://openjfx.io/javadoc/13/javafx.graphics/javafx/scene/shape/package-summary.html) et dans la documentation du module *java.controls*, surtout son package [javafx.scene.control](https://openjfx.io/javadoc/13/javafx.controls/javafx/scene/control/package-summary.html).
 
 ### Un exemple
 
@@ -173,7 +173,7 @@ var vbox = new VBox(label, hbox);  // label et hbox sont enfants de vbox
 
 Noter qu'il faut déclarer les objets les plus bas dans l'arboresence en premier afin de composer les objets plus près de la racine.
 
->Dans des projets structurés avec FXML, le graphe de scène est déclaré autrement, mais ça ressemble plus directement à l'arborescence que nous avons vu plus haut. La [section suivante](#graphes-de-sc%C3%A8ne-avec-fxml) traite spécifiquement du FXML.
+>Dans les projets structurés avec FXML, le graphe de scène est déclaré autrement, mais ça ressemble plus directement à l'arborescence que nous avons vu plus haut. La [section suivante](#graphes-de-sc%C3%A8ne-avec-fxml) traite spécifiquement du FXML.
 
 ### Utiliser les liens de parenté dans le graphe de scène
 
@@ -188,15 +188,15 @@ On peut aussi obtenir de l'information sur les relations de parenté d'un `Node`
 
 ```java
 label.getParent(); // null (aucun `Node` plus haut... le VBox est le `Root`)
-hbox.getChildren(); // retourne la liste contenant les `Node` TextBox et Button
+hbox.getChildren(); // retourne la liste contenant les `Node` TextField et Button
 text.getParent(); // retourne le `Node` HBox
 ```
 
-Ces commandes sont utilisés dans les programmes JavaFX simples et dans les *contrôleurs* des fichiers JavaFX structurés. Voir [cette section](#javafx-avec-fxml) pour plus d'information sur les contrôleurs.
+Ces commandes sont utilisés dans les programmes JavaFX simples et dans les *contrôleurs* des projets JavaFX structurés. Voir [cette section](#javafx-avec-fxml) pour plus d'information sur les contrôleurs.
 
 ### Placer le graphe de scène dans l'application
 
-Finalement, pour établir la scène et le stage, on utiliserait les commandes suivantes dans le code, présumant que le `Stage` passé dans la méthode `start()` s'appelle `stage` :
+Finalement, pour établir la scène et le stage, on utilise les commandes suivantes dans le code, présumant que le `Stage` passé dans la méthode `start()` s'appelle `stage` :
 
 ```java
 var height = 600;
