@@ -608,9 +608,9 @@ On le fait en ajoutant l'attribut suivant à l'élément `Root` du FXML :
 </VBox>
 ```
 
-*Les `...` indiquent que des partie du fichier FXML n'ont pas été inclus afin de rendre l'exemple plus facile à lire.*
+>Les `...` indiquent que des partie du fichier FXML n'ont pas été inclus afin de rendre l'exemple plus facile à lire.
 
->⚠ Le symbole `@` est critique devant le chemin. Le code ne fonctionne pas sans ça.
+⚠ Le symbole `@` est critique devant le chemin. Le code ne fonctionne pas sans ça.
 
 Et *voila!* Dans ce cas, on spécifie le chemin du fichier CSS **relativement au fichier FXML**. Le programme va charger le fichier CSS si un fichier "app.css" est dans le même dossier que ce fichier FXML. Placer les fichiers FXML et CSS ensemble est recommandé.
 
