@@ -133,7 +133,7 @@ Donc, après le `Stage` et la `Scene`, la structure de l'application (le graphe 
 
 Les objets `Root` sont des contenants avec des façons différentes d'organiser les objets qui y seront ajoutés : en tas (`StackPane`), comme ruban horizontal (`HBox`), comme ruban vertical (`VBox`), comme matrice (`GridPane`), etc. Ce sont des objets du module **Graphics**, particulièrement du package `javafx.scene.layout`.
 
-Les objets qu'on place dans l'objet `Root` s'appellent des `Node`, comme par exemple une étiquette (`Label`), un bouton (`Button`) ou un champ de texte(`TextBox`). Si l'objet le permet, on peut placer d'autres `Node` dans ces `Node`. Les éléments intéractifs comme les boutons sont des objets du module **Controls**, particulièrement du package `javafx.scene.control`.
+Les objets qu'on place dans l'objet `Root` s'appellent des `Node`, comme par exemple une étiquette (`Label`), un bouton (`Button`) ou un champ de texte (`TextField`). Si l'objet le permet, on peut placer d'autres `Node` dans ces `Node`. Les éléments intéractifs comme les boutons sont des objets du module **Controls**, particulièrement du package `javafx.scene.control`.
 
 >Vous pouvez trouver une liste des ces différents objets dans la documentation du module *java.graphics* de JavaFX, notamment dans les packages [javafx.scene.layout](https://openjfx.io/javadoc/13/javafx.graphics/javafx/scene/layout/package-summary.html) et [javafx.scene.shape](https://openjfx.io/javadoc/13/javafx.graphics/javafx/scene/shape/package-summary.html) et dans la documentation du module *java.controls*, surtout son package [javafx.scene.control](https://openjfx.io/javadoc/13/javafx.controls/javafx/scene/control/package-summary.html).
 
