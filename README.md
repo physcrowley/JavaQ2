@@ -2,7 +2,7 @@
 
 Ce dossier contient tous les exemples et une bonne partie des notes de cours pour le 2e quadrimestre.
 
->Voir les livres Learn [Java](https://learnjavathehardway.org/) / [Object-Oriented Java](https://grahammitchell.com/learn-java-oop/) The Hard Way pour les explications liées à ces [exercices Java](https://programmingbydoing.com/).
+>Voir les livres "Learn [Java](https://learnjavathehardway.org/) / [Object-Oriented Java](https://grahammitchell.com/learn-java-oop/) The Hard Way" de Graham Mitchell pour les explications liées à ces [exercices Java](https://programmingbydoing.com/).
 
 ## Encodage du texte
 
