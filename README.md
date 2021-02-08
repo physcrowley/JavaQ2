@@ -2,6 +2,8 @@
 
 Ce dossier contient tous les exemples et une bonne partie des notes de cours pour le 2e quadrimestre.
 
+>Voir les livres Learn [Java](https://learnjavathehardway.org/) / [Object-Oriented Java](https://grahammitchell.com/learn-java-oop/) The Hard Way pour les explications liées à ces [exercices Java](https://programmingbydoing.com/).
+
 ## Encodage du texte
 
 Les fichiers Java ont été encodés en **Windows 1252** afin de faciliter l'affichage du texte français (unicode) à la ligne de commande. Tous les autres fichiers sont encodés en **UTF-8**, le standard international actuel.
