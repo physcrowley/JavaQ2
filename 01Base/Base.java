@@ -2,37 +2,37 @@
     2020-11-17
 */
 
-// Au dÈbut du fichier, avant la dÈclaration de classe...
-// importer la dÈfinition de l'objet Scanner 
+// Au d√©but du fichier, avant la d√©claration de classe...
+// importer la d√©finition de l'objet Scanner 
 import java.util.Scanner;
 
-/** Exemples sur les types et les entrÈes et sorties au console */
+/** Exemples sur les types et les entr√©es et sorties au console */
 class Base
 {
     public static void main(String[] args) 
     {
-        //----------TYPES DE DONN…ES----------//
+        //----------TYPES DE DONN√âES----------//
 
-        // Il faut dÈclarer le TYPE des variables
-        // Format : <type> <nom> = <valeur assignÈe>;
+        // Il faut d√©clarer le TYPE des variables
+        // Format : <type> <nom> = <valeur assign√©e>;
 
-        String s = "45"; // texte -> usage gÈnÈral
+        String s = "45"; // texte -> usage g√©n√©ral
         int n = 3; // nombres entiers -> pour compter
-        double d = 3.1415; // nombres dÈcimaux -> pour les calculs
+        double d = 3.1415; // nombres d√©cimaux -> pour les calculs
 
         // conversions de type (texte -> nombre)
         n = Integer.parseInt(s);
         d = Double.parseDouble(s);
 
-        // casting entre types numÈriques
+        // casting entre types num√©riques
         n = (int) 0.691;
         d = (double) 365;
 
 
-        //-----------SORTIE ¿ LA CONSOLE-----------//
+        //-----------SORTIE √Ä LA CONSOLE-----------//
         
         // System.out 
-        // est la console dÈfinit par ton systËme d'exploitation
+        // est la console d√©finit par ton syst√®me d'exploitation
 
         // .println() ajoute automatiquement un retour de ligne
         System.out.println(s); 
@@ -40,32 +40,32 @@ class Base
         //.print() affiche seulement le texte (sans retour de ligne)
         System.out.print(s); 
         System.out.print(", " + n);
-        System.out.print(", " + d + "\n"); // \n est le caractËre pour un retour de ligne
+        System.out.print(", " + d + "\n"); // \n est le caract√®re pour un retour de ligne
 
         
-        //-----------ENTR…ES ¿ LA CONSOLE------------//
+        //-----------ENTR√âES √Ä LA CONSOLE------------//
 
-        // Tu dois crÈer UN SEUL objet de type Scanner
+        // Tu dois cr√©er UN SEUL objet de type Scanner
 
         // System.in 
-        // est la console dÈfinit par ton systËme d'exploitation
+        // est la console d√©finit par ton syst√®me d'exploitation
         Scanner input = new Scanner(System.in);
 
-        // Indiquer ‡ l'utilisateur d'entrer quelque chose
-        System.out.println("Taper un nombre dÈcimal ('.' est le symbole dÈcimal)");
+        // Indiquer √† l'utilisateur d'entrer quelque chose
+        System.out.println("Taper un nombre d√©cimal ('.' est le symbole d√©cimal)");
 
-        // Saisir le texte entrÈ avec la mÈthode .nextLine()
+        // Saisir le texte entr√© avec la m√©thode .nextLine()
         String getNum = input.nextLine();
 
-        // Convertir le texte captÈ en valeur numÈrique (de type double)
-        // --> cette Ètape peut gÈnÈrer une erreur si le texte n'a pas 
-        //     le format appropriÈ
+        // Convertir le texte capt√© en valeur num√©rique (de type double)
+        // --> cette √©tape peut g√©n√©rer une erreur si le texte n'a pas 
+        //     le format appropri√©
         double num = Double.parseDouble(getNum);
         
-        // Confirmer le rÈsultat avec un message ‡ la console
+        // Confirmer le r√©sultat avec un message √† la console
         System.out.println("Tu as inscrit le nombre " + num);
         
-        // ¿ la fin de la mÈthode main()...
+        // √Ä la fin de la m√©thode main()...
         // fermer/tuer le Scanner qui observe la console / System.in
         input.close(); 
     }
